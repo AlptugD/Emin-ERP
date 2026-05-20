@@ -1,14 +1,14 @@
 namespace ERP.UI
 {
-    partial class Form1
+    partial class FormKayitOl
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,8 +23,8 @@ namespace ERP.UI
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -33,129 +33,68 @@ namespace ERP.UI
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            btnGirisYap = new Guna.UI2.WinForms.Guna2Button();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnKayitOl = new Guna.UI2.WinForms.Guna2Button();
-            linkLabel1 = new LinkLabel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnGirisYapDon = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             txtKullaniciAdi = new Guna.UI2.WinForms.Guna2TextBox();
             txtSifre = new Guna.UI2.WinForms.Guna2TextBox();
-            lblGizleGoster = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            txtSifreTekrar = new Guna.UI2.WinForms.Guna2TextBox();
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // btnGirisYap
-            // 
-            btnGirisYap.BorderRadius = 15;
-            btnGirisYap.BorderThickness = 1;
-            btnGirisYap.CustomizableEdges = customizableEdges1;
-            btnGirisYap.DisabledState.BorderColor = Color.DarkGray;
-            btnGirisYap.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnGirisYap.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnGirisYap.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnGirisYap.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            btnGirisYap.ForeColor = Color.White;
-            btnGirisYap.Location = new Point(669, 487);
-            btnGirisYap.Name = "btnGirisYap";
-            btnGirisYap.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnGirisYap.Size = new Size(174, 56);
-            btnGirisYap.TabIndex = 2;
-            btnGirisYap.Text = "Giriş Yap";
-            // 
             // btnKayitOl
             // 
             btnKayitOl.BorderRadius = 15;
-            btnKayitOl.CustomizableEdges = customizableEdges3;
+            btnKayitOl.BorderThickness = 1;
+            btnKayitOl.CustomizableEdges = customizableEdges1;
             btnKayitOl.DisabledState.BorderColor = Color.DarkGray;
             btnKayitOl.DisabledState.CustomBorderColor = Color.DarkGray;
             btnKayitOl.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnKayitOl.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnKayitOl.FillColor = Color.White;
             btnKayitOl.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            btnKayitOl.ForeColor = SystemColors.Highlight;
-            btnKayitOl.Location = new Point(1087, 25);
+            btnKayitOl.ForeColor = Color.White;
+            btnKayitOl.Location = new Point(657, 540);
             btnKayitOl.Name = "btnKayitOl";
-            btnKayitOl.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnKayitOl.Size = new Size(174, 56);
-            btnKayitOl.TabIndex = 3;
+            btnKayitOl.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnKayitOl.Size = new Size(280, 56);
+            btnKayitOl.TabIndex = 4;
             btnKayitOl.Text = "Kayıt Ol";
+            btnKayitOl.Click += btnKayitOl_Click;
             // 
-            // linkLabel1
+            // btnGirisYapDon
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.Black;
-            linkLabel1.Location = new Point(1144, 450);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(117, 20);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Şifremi Unuttum";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            guna2HtmlLabel1.Location = new Point(51, 29);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(3, 2);
-            guna2HtmlLabel1.TabIndex = 5;
-            guna2HtmlLabel1.Text = null;
-            // 
-            // guna2HtmlLabel2
-            // 
-            guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Location = new Point(51, 78);
-            guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(161, 22);
-            guna2HtmlLabel2.TabIndex = 6;
-            guna2HtmlLabel2.Text = "Ürünleriniz Emin Ellerde";
-            // 
-            // guna2HtmlLabel3
-            // 
-            guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            guna2HtmlLabel3.Location = new Point(593, 152);
-            guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(285, 39);
-            guna2HtmlLabel3.TabIndex = 7;
-            guna2HtmlLabel3.Text = "Hesabınıza Giriş Yapınız";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            guna2HtmlLabel4.Location = new Point(593, 217);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(153, 19);
-            guna2HtmlLabel4.TabIndex = 8;
-            guna2HtmlLabel4.Text = "E posta Veya Kullanıcı Adı";
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            guna2HtmlLabel5.Location = new Point(593, 319);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(29, 19);
-            guna2HtmlLabel5.TabIndex = 9;
-            guna2HtmlLabel5.Text = "Şifre";
+            btnGirisYapDon.BorderRadius = 15;
+            btnGirisYapDon.BorderThickness = 1;
+            btnGirisYapDon.CustomizableEdges = customizableEdges3;
+            btnGirisYapDon.DisabledState.BorderColor = Color.DarkGray;
+            btnGirisYapDon.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnGirisYapDon.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnGirisYapDon.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnGirisYapDon.FillColor = Color.White;
+            btnGirisYapDon.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            btnGirisYapDon.ForeColor = SystemColors.Highlight;
+            btnGirisYapDon.Location = new Point(981, 540);
+            btnGirisYapDon.Name = "btnGirisYapDon";
+            btnGirisYapDon.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnGirisYapDon.Size = new Size(280, 56);
+            btnGirisYapDon.TabIndex = 5;
+            btnGirisYapDon.Text = "Giriş Ekranına Dön";
+            btnGirisYapDon.Click += btnGirisYapDon_Click;
             // 
             // guna2HtmlLabel6
             // 
@@ -171,29 +110,38 @@ namespace ERP.UI
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Segoe UI", 14F);
-            guna2HtmlLabel7.Location = new Point(669, 162);
+            guna2HtmlLabel7.Location = new Point(669, 140);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(246, 33);
+            guna2HtmlLabel7.Size = new Size(90, 33);
             guna2HtmlLabel7.TabIndex = 12;
-            guna2HtmlLabel7.Text = "Hesabınıza Giriş Yapınız";
+            guna2HtmlLabel7.Text = "Kayıt Ol";
             // 
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
-            guna2HtmlLabel8.Location = new Point(669, 253);
+            guna2HtmlLabel8.Location = new Point(669, 210);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            guna2HtmlLabel8.Size = new Size(174, 22);
+            guna2HtmlLabel8.Size = new Size(95, 22);
             guna2HtmlLabel8.TabIndex = 13;
-            guna2HtmlLabel8.Text = "E Posta Veya Kullanıcı Adı";
+            guna2HtmlLabel8.Text = "Kullanıcı Adı";
             // 
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Location = new Point(669, 357);
+            guna2HtmlLabel9.Location = new Point(669, 305);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(33, 22);
             guna2HtmlLabel9.TabIndex = 14;
             guna2HtmlLabel9.Text = "Şifre";
+            // 
+            // guna2HtmlLabel11
+            // 
+            guna2HtmlLabel11.BackColor = Color.Transparent;
+            guna2HtmlLabel11.Location = new Point(669, 400);
+            guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            guna2HtmlLabel11.Size = new Size(76, 22);
+            guna2HtmlLabel11.TabIndex = 15;
+            guna2HtmlLabel11.Text = "Şifre Tekrar";
             // 
             // guna2Elipse1
             // 
@@ -203,12 +151,12 @@ namespace ERP.UI
             // guna2PictureBox1
             // 
             guna2PictureBox1.BorderRadius = 20;
-            guna2PictureBox1.CustomizableEdges = customizableEdges9;
+            guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = Properties.Resources.side_image;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(28, 121);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Size = new Size(595, 514);
             guna2PictureBox1.TabIndex = 15;
             guna2PictureBox1.TabStop = false;
@@ -226,20 +174,20 @@ namespace ERP.UI
             txtKullaniciAdi.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtKullaniciAdi.Font = new Font("Segoe UI", 9F);
             txtKullaniciAdi.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtKullaniciAdi.Location = new Point(657, 289);
+            txtKullaniciAdi.Location = new Point(657, 240);
             txtKullaniciAdi.Margin = new Padding(3, 4, 3, 4);
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.PlaceholderText = "";
             txtKullaniciAdi.SelectedText = "";
             txtKullaniciAdi.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtKullaniciAdi.Size = new Size(604, 61);
-            txtKullaniciAdi.TabIndex = 16;
+            txtKullaniciAdi.Size = new Size(604, 50);
+            txtKullaniciAdi.TabIndex = 1;
             // 
             // txtSifre
             // 
             txtSifre.BorderColor = Color.Black;
             txtSifre.BorderRadius = 8;
-            txtSifre.CustomizableEdges = customizableEdges5;
+            txtSifre.CustomizableEdges = customizableEdges9;
             txtSifre.DefaultText = "";
             txtSifre.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSifre.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -249,24 +197,39 @@ namespace ERP.UI
             txtSifre.Font = new Font("Segoe UI", 9F);
             txtSifre.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtSifre.IconRightCursor = Cursors.Hand;
-            txtSifre.Location = new Point(657, 385);
+            txtSifre.Location = new Point(657, 335);
             txtSifre.Margin = new Padding(3, 4, 3, 4);
             txtSifre.Name = "txtSifre";
             txtSifre.PlaceholderText = "";
             txtSifre.SelectedText = "";
-            txtSifre.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtSifre.Size = new Size(604, 61);
-            txtSifre.TabIndex = 17;
+            txtSifre.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtSifre.Size = new Size(604, 50);
+            txtSifre.TabIndex = 2;
             txtSifre.UseSystemPasswordChar = true;
             // 
-            // lblGizleGoster
+            // txtSifreTekrar
             // 
-            lblGizleGoster.BackColor = Color.Transparent;
-            lblGizleGoster.Location = new Point(1189, 404);
-            lblGizleGoster.Name = "lblGizleGoster";
-            lblGizleGoster.Size = new Size(46, 22);
-            lblGizleGoster.TabIndex = 18;
-            lblGizleGoster.Text = "Göster";
+            txtSifreTekrar.BorderColor = Color.Black;
+            txtSifreTekrar.BorderRadius = 8;
+            txtSifreTekrar.CustomizableEdges = customizableEdges11;
+            txtSifreTekrar.DefaultText = "";
+            txtSifreTekrar.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtSifreTekrar.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtSifreTekrar.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtSifreTekrar.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtSifreTekrar.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSifreTekrar.Font = new Font("Segoe UI", 9F);
+            txtSifreTekrar.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtSifreTekrar.IconRightCursor = Cursors.Hand;
+            txtSifreTekrar.Location = new Point(657, 430);
+            txtSifreTekrar.Margin = new Padding(3, 4, 3, 4);
+            txtSifreTekrar.Name = "txtSifreTekrar";
+            txtSifreTekrar.PlaceholderText = "";
+            txtSifreTekrar.SelectedText = "";
+            txtSifreTekrar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtSifreTekrar.Size = new Size(604, 50);
+            txtSifreTekrar.TabIndex = 3;
+            txtSifreTekrar.UseSystemPasswordChar = true;
             // 
             // guna2HtmlLabel10
             // 
@@ -279,50 +242,46 @@ namespace ERP.UI
             guna2HtmlLabel10.TabIndex = 19;
             guna2HtmlLabel10.Text = "Ürünleriniz emin ellerde";
             // 
-            // Form1
+            // FormKayitOl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1353, 713);
             Controls.Add(guna2HtmlLabel10);
-            Controls.Add(lblGizleGoster);
+            Controls.Add(txtSifreTekrar);
             Controls.Add(txtSifre);
             Controls.Add(txtKullaniciAdi);
             Controls.Add(guna2PictureBox1);
+            Controls.Add(guna2HtmlLabel11);
             Controls.Add(guna2HtmlLabel9);
             Controls.Add(guna2HtmlLabel8);
             Controls.Add(guna2HtmlLabel7);
             Controls.Add(guna2HtmlLabel6);
-            Controls.Add(linkLabel1);
+            Controls.Add(btnGirisYapDon);
             Controls.Add(btnKayitOl);
-            Controls.Add(btnGirisYap);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "FormKayitOl";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "FormKayitOl";
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button btnGirisYap;
+
         private Guna.UI2.WinForms.Guna2Button btnKayitOl;
-        private LinkLabel linkLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2Button btnGirisYapDon;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblGizleGoster;
-        private Guna.UI2.WinForms.Guna2TextBox txtSifre;
         private Guna.UI2.WinForms.Guna2TextBox txtKullaniciAdi;
+        private Guna.UI2.WinForms.Guna2TextBox txtSifre;
+        private Guna.UI2.WinForms.Guna2TextBox txtSifreTekrar;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }

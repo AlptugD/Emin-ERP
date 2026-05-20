@@ -1,13 +1,12 @@
-using ERP.BLL;      // BLL katmanını tanımak için
-using ERP.Entities; // User sınıfını tanımak için
+using ERP.BLL;
+using ERP.Entities;
 using System;
 using System.Windows.Forms;
 
-namespace ERP.UI
+namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyla birebir aynı olmalı.
 {
     public partial class Form1 : Form
     {
-        // 1. Manager sınıfımızı başlatıyoruz (BLL ile iletişim için)
         UserManager _userManager = new UserManager();
 
         public Form1()
@@ -15,28 +14,13 @@ namespace ERP.UI
             InitializeComponent();
         }
 
-        // 2. KAYIT OL butonuna çift tıklayıp bu kodu içine yapıştır
         private void btnKayitOl_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // TextBox isimlerinin txtKullaniciAdi ve txtSifre olduğunu varsayıyorum
-                User newUser = new User
-                {
-                    Username = txtKullaniciAdi.Text,
-                    Password = txtSifre.Text
-                };
-
-                _userManager.Add(newUser);
-                MessageBox.Show("Kayıt Başarıyla Oluşturuldu!", "Bilgi");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Hata");
-            }
+            FormKayitOl kayitForm = new FormKayitOl();
+            kayitForm.Show();
+            this.Hide();
         }
 
-        // 3. GİRİŞ YAP butonuna çift tıklayıp bu kodu içine yapıştır
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             try
@@ -45,8 +29,10 @@ namespace ERP.UI
 
                 if (isSuccess)
                 {
-                    MessageBox.Show("Giriş Başarılı!");
-                    // İleride buraya başka bir form açtırma kodu gelecek
+                    MessageBox.Show("Giriş Başarılı!", "Bilgi");
+                    this.Hide();
+                    // FormAnaMenu anaMenu = new FormAnaMenu();
+                    // anaMenu.Show();
                 }
                 else
                 {
@@ -59,9 +45,11 @@ namespace ERP.UI
             }
         }
 
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            FormSifremiUnuttum forgotForm = new FormSifremiUnuttum();
+            forgotForm.Show();
+            this.Hide();
         }
     }
 }

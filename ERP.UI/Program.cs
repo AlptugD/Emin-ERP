@@ -8,9 +8,18 @@ namespace ERP.UI
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            try
+            {
+                var userManager = new ERP.BLL.UserManager();
+                userManager.EnsureDatabaseCreated();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Veritabanı Bağlantı Durumu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             Application.Run(new Form1());
         }
     }

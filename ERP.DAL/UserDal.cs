@@ -1,4 +1,4 @@
-﻿using ERP.Entities;
+using ERP.Entities;
 using Microsoft.Data.SqlClient;
 
 namespace ERP.DAL
@@ -27,6 +27,41 @@ namespace ERP.DAL
                 cmd.Parameters.AddWithValue("@p2", password);
                 return (int)cmd.ExecuteScalar() > 0;
             }
+        }
+
+        public bool CheckUserExists(string username)
+        {
+            using (SqlConnection conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username=@p1", conn);
+                cmd.Parameters.AddWithValue("@p1", username);
+                return (int)cmd.ExecuteScalar() > 0;
+            }
+        }
+
+        public bool UpdatePassword(string username, string newPassword)
+        {
+            using (SqlConnection conn = DbHelper.GetConnection())
+            {
+                conn.Open();
+                SqlCommand checkCmd = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Username=@p1", conn);
+                checkCmd.Parameters.AddWithValue("@p1", username);
+                if ((int)checkCmd.ExecuteScalar() == 0)
+                {
+                    return false;
+                }
+
+                SqlCommand cmd = new SqlCommand("UPDATE Users SET Password=@p2 WHERE Username=@p1", conn);
+                cmd.Parameters.AddWithValue("@p1", username);
+                cmd.Parameters.AddWithValue("@p2", newPassword);
+                return cmd.ExecuteNonQuery() > 0;
+            }
+        }
+
+        public void EnsureDatabaseCreated()
+        {
+            DbHelper.EnsureDatabaseAndTableCreated();
         }
     }
 }
