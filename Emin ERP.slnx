@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="ERP.BLL/ERP.BLL.csproj" />
+  <Project Path="ERP.DAL/ERP.DAL.csproj" />
+  <Project Path="ERP.Entities/ERP.Entities.csproj" />
+  <Project Path="ERP.UI/ERP.UI.csproj" />
+</Solution>
