@@ -1,6 +1,6 @@
 namespace ERP.UI
 {
-    partial class Form1
+    partial class FormGiris
     {
         /// <summary>
         ///  Required designer variable.
@@ -77,6 +77,7 @@ namespace ERP.UI
             btnGirisYap.Size = new Size(174, 56);
             btnGirisYap.TabIndex = 2;
             btnGirisYap.Text = "Giriş Yap";
+            btnGirisYap.Click += btnGirisYap_Click;
             // 
             // btnKayitOl
             // 
@@ -95,6 +96,7 @@ namespace ERP.UI
             btnKayitOl.Size = new Size(174, 56);
             btnKayitOl.TabIndex = 3;
             btnKayitOl.Text = "Kayıt Ol";
+            btnKayitOl.Click += btnKayitOl_Click;
             // 
             // linkLabel1
             // 
@@ -265,8 +267,10 @@ namespace ERP.UI
             lblGizleGoster.Location = new Point(1189, 404);
             lblGizleGoster.Name = "lblGizleGoster";
             lblGizleGoster.Size = new Size(46, 22);
+            lblGizleGoster.Cursor = Cursors.Hand;
             lblGizleGoster.TabIndex = 18;
             lblGizleGoster.Text = "Göster";
+            lblGizleGoster.Click += lblGizleGoster_Click;
             // 
             // guna2HtmlLabel10
             // 
@@ -297,7 +301,7 @@ namespace ERP.UI
             Controls.Add(btnKayitOl);
             Controls.Add(btnGirisYap);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form1";
+            Name = "FormGiris";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();

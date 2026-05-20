@@ -20,7 +20,7 @@ namespace ERP.UI
                 MessageBox.Show(ex.Message, "Veritabanı Bağlantı Durumu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            Application.Run(new Form1());
+            Application.Run(new FormGiris());
         }
     }
 }

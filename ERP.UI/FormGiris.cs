@@ -5,11 +5,11 @@ using System.Windows.Forms;
 
 namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyla birebir aynı olmalı.
 {
-    public partial class Form1 : Form
+    public partial class FormGiris : Form
     {
         UserManager _userManager = new UserManager();
 
-        public Form1()
+        public FormGiris()
         {
             InitializeComponent();
         }
@@ -31,8 +31,8 @@ namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyl
                 {
                     MessageBox.Show("Giriş Başarılı!", "Bilgi");
                     this.Hide();
-                    // FormAnaMenu anaMenu = new FormAnaMenu();
-                    // anaMenu.Show();
+                    FormAnaMenu anaMenu = new FormAnaMenu();
+                    anaMenu.Show();
                 }
                 else
                 {
@@ -50,6 +50,20 @@ namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyl
             FormSifremiUnuttum forgotForm = new FormSifremiUnuttum();
             forgotForm.Show();
             this.Hide();
+        }
+
+        private void lblGizleGoster_Click(object sender, EventArgs e)
+        {
+            if (txtSifre.UseSystemPasswordChar)
+            {
+                txtSifre.UseSystemPasswordChar = false;
+                lblGizleGoster.Text = "Gizle";
+            }
+            else
+            {
+                txtSifre.UseSystemPasswordChar = true;
+                lblGizleGoster.Text = "Göster";
+            }
         }
     }
 }

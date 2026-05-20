@@ -21,7 +21,7 @@ namespace ERP.UI
                 MessageBox.Show("Şifreniz başarıyla güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 // Return to login
-                Form1 loginForm = new Form1();
+                FormGiris loginForm = new FormGiris();
                 loginForm.Show();
                 this.Close();
             }
@@ -33,7 +33,7 @@ namespace ERP.UI
 
         private void btnGirisYapDon_Click(object sender, EventArgs e)
         {
-            Form1 loginForm = new Form1();
+            FormGiris loginForm = new FormGiris();
             loginForm.Show();
             this.Close();
         }
