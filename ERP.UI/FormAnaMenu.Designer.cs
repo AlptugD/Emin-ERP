@@ -53,9 +53,10 @@ namespace ERP.UI
             lblFooterCol1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             pnlSeoSection = new Guna.UI2.WinForms.Guna2Panel();
             btnDahaFazlaGor = new LinkLabel();
-            lblSeoDescription = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblSeoDescription = new Label();
             lblSeoSubTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblSeoTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            tbPrice = new Guna.UI2.WinForms.Guna2TrackBar();
             flowLayoutProducts = new FlowLayoutPanel();
             pnlProductHeader = new Guna.UI2.WinForms.Guna2Panel();
             lblTabOnerilenler = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -222,6 +223,7 @@ namespace ERP.UI
             // 
             // lblSeoDescription
             // 
+            lblSeoDescription.AutoSize = false;
             lblSeoDescription.BackColor = Color.Transparent;
             lblSeoDescription.Font = new Font("Segoe UI", 9.5F);
             lblSeoDescription.ForeColor = Color.DimGray;
@@ -257,7 +259,7 @@ namespace ERP.UI
             // 
             flowLayoutProducts.Location = new Point(310, 60);
             flowLayoutProducts.Name = "flowLayoutProducts";
-            flowLayoutProducts.Size = new Size(1010, 750);
+            flowLayoutProducts.Size = new Size(1010, 780);
             flowLayoutProducts.TabIndex = 2;
             // 
             // pnlProductHeader
@@ -309,6 +311,7 @@ namespace ERP.UI
             pnlSidebar.Controls.Add(btnFiltrele);
             pnlSidebar.Controls.Add(txtMaxPrice);
             pnlSidebar.Controls.Add(txtMinPrice);
+            pnlSidebar.Controls.Add(tbPrice);
             pnlSidebar.Controls.Add(lblPriceFilterTitle);
             pnlSidebar.Controls.Add(pnlCategories);
             pnlSidebar.Controls.Add(lblFilterHeader);
@@ -327,20 +330,20 @@ namespace ERP.UI
             btnFiltrele.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFiltrele.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnFiltrele.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFiltrele.FillColor = Color.FromArgb(52, 152, 219);
+            btnFiltrele.FillColor = Color.FromArgb(33, 150, 243);
             btnFiltrele.Font = new Font("Segoe UI", 9.5F);
             btnFiltrele.ForeColor = Color.White;
-            btnFiltrele.Location = new Point(15, 480);
+            btnFiltrele.Location = new Point(15, 495);
             btnFiltrele.Name = "btnFiltrele";
             btnFiltrele.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnFiltrele.Size = new Size(230, 40);
             btnFiltrele.TabIndex = 5;
-            btnFiltrele.Text = "Filtrele";
+            btnFiltrele.Text = "filtrele";
             btnFiltrele.Click += btnFiltrele_Click;
             // 
             // txtMaxPrice
             // 
-            txtMaxPrice.BorderColor = Color.DarkGray;
+            txtMaxPrice.BorderColor = Color.FromArgb(240, 240, 240);
             txtMaxPrice.BorderRadius = 5;
             txtMaxPrice.CustomizableEdges = customizableEdges3;
             txtMaxPrice.DefaultText = "1000";
@@ -348,10 +351,11 @@ namespace ERP.UI
             txtMaxPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMaxPrice.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMaxPrice.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMaxPrice.FillColor = Color.FromArgb(245, 245, 245);
             txtMaxPrice.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMaxPrice.Font = new Font("Segoe UI", 9F);
             txtMaxPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaxPrice.Location = new Point(135, 425);
+            txtMaxPrice.Location = new Point(135, 445);
             txtMaxPrice.Margin = new Padding(3, 4, 3, 4);
             txtMaxPrice.Name = "txtMaxPrice";
             txtMaxPrice.PlaceholderText = "Maks";
@@ -359,10 +363,12 @@ namespace ERP.UI
             txtMaxPrice.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtMaxPrice.Size = new Size(110, 36);
             txtMaxPrice.TabIndex = 4;
+            txtMaxPrice.TextAlign = HorizontalAlignment.Center;
+            txtMaxPrice.TextChanged += txtMaxPrice_TextChanged;
             // 
             // txtMinPrice
             // 
-            txtMinPrice.BorderColor = Color.DarkGray;
+            txtMinPrice.BorderColor = Color.FromArgb(240, 240, 240);
             txtMinPrice.BorderRadius = 5;
             txtMinPrice.CustomizableEdges = customizableEdges5;
             txtMinPrice.DefaultText = "0";
@@ -370,10 +376,11 @@ namespace ERP.UI
             txtMinPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMinPrice.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMinPrice.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMinPrice.FillColor = Color.FromArgb(245, 245, 245);
             txtMinPrice.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMinPrice.Font = new Font("Segoe UI", 9F);
             txtMinPrice.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMinPrice.Location = new Point(15, 425);
+            txtMinPrice.Location = new Point(15, 445);
             txtMinPrice.Margin = new Padding(3, 4, 3, 4);
             txtMinPrice.Name = "txtMinPrice";
             txtMinPrice.PlaceholderText = "Min";
@@ -381,16 +388,30 @@ namespace ERP.UI
             txtMinPrice.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtMinPrice.Size = new Size(110, 36);
             txtMinPrice.TabIndex = 3;
+            txtMinPrice.TextAlign = HorizontalAlignment.Center;
+            txtMinPrice.TextChanged += txtMinPrice_TextChanged;
             // 
             // lblPriceFilterTitle
             // 
             lblPriceFilterTitle.BackColor = Color.Transparent;
             lblPriceFilterTitle.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
-            lblPriceFilterTitle.Location = new Point(15, 395);
+            lblPriceFilterTitle.Location = new Point(15, 385);
             lblPriceFilterTitle.Name = "lblPriceFilterTitle";
             lblPriceFilterTitle.Size = new Size(124, 23);
             lblPriceFilterTitle.TabIndex = 2;
             lblPriceFilterTitle.Text = "Fiyat Aralığı Belirle";
+            // 
+            // tbPrice
+            // 
+            tbPrice.Location = new Point(15, 415);
+            tbPrice.Maximum = 1000;
+            tbPrice.Minimum = 0;
+            tbPrice.Name = "tbPrice";
+            tbPrice.Size = new Size(230, 20);
+            tbPrice.TabIndex = 6;
+            tbPrice.ThumbColor = Color.FromArgb(33, 150, 243);
+            tbPrice.Value = 1000;
+            tbPrice.ValueChanged += tbPrice_ValueChanged;
             // 
             // pnlCategories
             // 
@@ -582,12 +603,13 @@ namespace ERP.UI
         private Guna.UI2.WinForms.Guna2Panel pnlSeoSection;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSeoTitle;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblSeoSubTitle;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblSeoDescription;
+        private Label lblSeoDescription;
         private LinkLabel btnDahaFazlaGor;
         private Guna.UI2.WinForms.Guna2Panel pnlFooter;
         private Guna.UI2.WinForms.Guna2Panel pnlFooterLinks;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFooterCol1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFooterCol2;
+        private Guna.UI2.WinForms.Guna2TrackBar tbPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFooterCol3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFooterCol4;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCopyright;
