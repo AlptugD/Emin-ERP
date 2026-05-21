@@ -31,51 +31,51 @@ namespace ERP.UI
             // Set initial trackbar values to match text fields
             if (tbPrice != null)
             {
-                tbPrice.Value = 1000;
+                tbPrice.Value = 15000;
             }
         }
 
         private void InitializeProducts()
         {
-            // Card 1: Mavi Premium ...
+            // Card 1: Mavi Premium Kablosuz Kulaklık
             products.Add(new ProductItem
             {
-                Name = "Mavi Premium ...",
+                Name = "Mavi Premium Kablosuz Kulaklık",
                 Brand = "ProCompute",
-                Price = 123.00,
+                Price = 3499.00,
                 Category = "Kablosuz Kulaklıklar",
                 ImageFileName = "blue_headphones.png",
                 PrimaryColor = Color.FromArgb(94, 145, 196)
             });
 
-            // Card 2: Taşınabilir Oyun Konsol ...
+            // Card 2: Taşınabilir Oyun Konsolu
             products.Add(new ProductItem
             {
-                Name = "Taşınabilir Oyun Konsol ...",
+                Name = "Taşınabilir Oyun Konsolu",
                 Brand = "PlayAnywhere",
-                Price = 11.00,
+                Price = 12999.00,
                 Category = "Masaüstü Bilgisayarlar",
                 ImageFileName = "white_controller.png",
                 PrimaryColor = Color.FromArgb(220, 224, 230)
             });
 
-            // Card 3: Çiçek Desenli tablet Kılıfı ...
+            // Card 3: Çiçek Desenli Tablet Kılıfı
             products.Add(new ProductItem
             {
-                Name = "Çiçek Desenli tablet Kılıfı ...",
+                Name = "Çiçek Desenli Tablet Kılıfı",
                 Brand = "SkinArt",
-                Price = 119.00,
+                Price = 699.00,
                 Category = "Kılıflar & Ekran Koruyucular",
                 ImageFileName = "tablet_case.png",
                 PrimaryColor = Color.FromArgb(240, 215, 215)
             });
 
-            // Card 4: Lavanta Rengi Kablosuz ...
+            // Card 4: Lavanta Rengi Kablosuz Kulaklık
             products.Add(new ProductItem
             {
-                Name = "Lavanta Rengi Kablosuz ...",
+                Name = "Lavanta Rengi Kablosuz Kulaklık",
                 Brand = "SonicWave",
-                Price = 77.00,
+                Price = 1999.00,
                 Category = "Kablosuz Kulaklıklar",
                 ImageFileName = "lavender_headphones.png",
                 PrimaryColor = Color.FromArgb(215, 200, 235)
@@ -86,9 +86,9 @@ namespace ERP.UI
             {
                 Name = "White Graphic Crop Top",
                 Brand = "woden's Brand",
-                Price = 29.00,
+                Price = 449.00,
                 Category = "Telefon Aksesuarları",
-                ImageFileName = "purple_smartphone.png",
+                ImageFileName = "white_crop_top.png",
                 PrimaryColor = Color.FromArgb(235, 230, 240)
             });
 
@@ -97,9 +97,9 @@ namespace ERP.UI
             {
                 Name = "Black Shorts",
                 Brand = "MM's Brand",
-                Price = 37.00,
+                Price = 549.00,
                 Category = "Dizüstü Bilgisayarlar",
-                ImageFileName = "gaming_laptop.png",
+                ImageFileName = "black_shorts.png",
                 PrimaryColor = Color.FromArgb(230, 230, 230)
             });
         }
@@ -240,8 +240,8 @@ namespace ERP.UI
                 Label lblTitle = new Label();
                 lblTitle.Text = item.Name;
                 lblTitle.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
-                lblTitle.Location = new Point(15, 255);
-                lblTitle.Size = new Size(185, 22);
+                lblTitle.Location = new Point(15, 245);
+                lblTitle.Size = new Size(280, 38);
                 lblTitle.ForeColor = Color.FromArgb(40, 40, 40);
                 card.Controls.Add(lblTitle);
 
@@ -249,20 +249,20 @@ namespace ERP.UI
                 Label lblBrand = new Label();
                 lblBrand.Text = item.Brand;
                 lblBrand.Font = new Font("Segoe UI Semibold", 8.5f, FontStyle.Regular);
-                lblBrand.Location = new Point(15, 280);
-                lblBrand.Size = new Size(185, 18);
+                lblBrand.Location = new Point(15, 293);
+                lblBrand.Size = new Size(170, 18);
                 lblBrand.ForeColor = Color.FromArgb(160, 160, 160);
                 card.Controls.Add(lblBrand);
 
                 // Price Tag (Pill shape)
                 Guna2Button btnPrice = new Guna2Button();
-                btnPrice.Text = "$" + item.Price.ToString("F2");
+                btnPrice.Text = item.Price.ToString("N2") + " TL";
                 btnPrice.Font = new Font("Segoe UI Semibold", 9.0f, FontStyle.Bold);
                 btnPrice.FillColor = Color.FromArgb(245, 245, 245);
                 btnPrice.ForeColor = Color.FromArgb(40, 40, 40);
                 btnPrice.BorderRadius = 12;
-                btnPrice.Size = new Size(80, 28);
-                btnPrice.Location = new Point(215, 260);
+                btnPrice.Size = new Size(95, 28);
+                btnPrice.Location = new Point(200, 288);
                 btnPrice.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 card.Controls.Add(btnPrice);
 
@@ -273,12 +273,31 @@ namespace ERP.UI
                 btnAddToCart.FillColor = Color.FromArgb(33, 150, 243);
                 btnAddToCart.ForeColor = Color.White;
                 btnAddToCart.BorderRadius = 10;
-                btnAddToCart.Size = new Size(80, 28);
-                btnAddToCart.Location = new Point(215, 295);
+                btnAddToCart.Size = new Size(95, 28);
+                btnAddToCart.Location = new Point(200, 320);
                 btnAddToCart.Cursor = Cursors.Hand;
                 btnAddToCart.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 btnAddToCart.Click += (s, ev) => {
                     CartManager.Add(item);
+                    
+                    // Visual feedback
+                    string originalText = btnAddToCart.Text;
+                    Color originalColor = btnAddToCart.FillColor;
+                    
+                    btnAddToCart.Text = "✓ Eklendi";
+                    btnAddToCart.FillColor = Color.FromArgb(46, 204, 113); // Soft green color
+                    btnAddToCart.Enabled = false;
+                    
+                    System.Windows.Forms.Timer resetTimer = new System.Windows.Forms.Timer();
+                    resetTimer.Interval = 1200;
+                    resetTimer.Tick += (senderTimer, eTimer) => {
+                        btnAddToCart.Text = originalText;
+                        btnAddToCart.FillColor = originalColor;
+                        btnAddToCart.Enabled = true;
+                        resetTimer.Stop();
+                        resetTimer.Dispose();
+                    };
+                    resetTimer.Start();
                 };
                 card.Controls.Add(btnAddToCart);
 
@@ -376,30 +395,26 @@ namespace ERP.UI
                 }
                 else if (productName.Contains("Crop") || productName.Contains("Telefon"))
                 {
-                    // Mockup purple smartphone
-                    using (Brush b = new SolidBrush(Color.FromArgb(50, 50, 50)))
+                    // Draw clean crop top mockup
+                    using (Brush b = new SolidBrush(Color.White))
                     {
-                        g.FillRectangle(b, 100, 45, 90, 150);
+                        g.FillRectangle(b, 100, 70, 90, 70); // Torso
+                        g.FillRectangle(b, 75, 70, 25, 30); // Left sleeve
+                        g.FillRectangle(b, 190, 70, 25, 30); // Right sleeve
                     }
-                    using (Brush b = new SolidBrush(Color.FromArgb(15, 15, 15)))
+                    using (Pen p = new Pen(Color.FromArgb(142, 68, 173), 3))
                     {
-                        g.FillRectangle(b, 105, 50, 80, 140);
+                        g.DrawLine(p, 100, 140, 190, 140); // Bottom waist line
                     }
                 }
                 else if (productName.Contains("Shorts") || productName.Contains("Bilgisayar"))
                 {
-                    // Draw premium gaming laptop
-                    using (Brush b = new SolidBrush(Color.FromArgb(80, 80, 80)))
+                    // Draw black shorts mockup
+                    using (Brush b = new SolidBrush(Color.FromArgb(40, 40, 40)))
                     {
-                        g.FillRectangle(b, 75, 70, 140, 90);
-                    }
-                    using (Brush b = new SolidBrush(Color.FromArgb(30, 30, 30)))
-                    {
-                        g.FillRectangle(b, 80, 75, 130, 80);
-                    }
-                    using (Brush b = new SolidBrush(Color.FromArgb(150, 150, 150)))
-                    {
-                        g.FillRectangle(b, 65, 160, 160, 10);
+                        g.FillRectangle(b, 95, 75, 100, 35); // waist
+                        g.FillRectangle(b, 95, 110, 45, 60); // left leg
+                        g.FillRectangle(b, 150, 110, 45, 60); // right leg
                     }
                 }
             }

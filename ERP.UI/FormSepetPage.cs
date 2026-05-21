@@ -30,7 +30,7 @@ namespace ERP.UI
             flowLayoutCartItems.Controls.Clear();
             
             double subtotal = 0;
-            double shipping = CartManager.Items.Count > 0 ? 5.00 : 0.00;
+            double shipping = CartManager.Items.Count > 0 ? 50.00 : 0.00;
 
             foreach (var item in CartManager.Items)
             {
@@ -76,10 +76,10 @@ namespace ERP.UI
 
                 // 3. Price
                 Label lblPrice = new Label();
-                lblPrice.Text = $"${item.Product.Price:F2}";
+                lblPrice.Text = $"{item.Product.Price:N2} TL";
                 lblPrice.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
                 lblPrice.Location = new Point(480, 38);
-                lblPrice.Size = new Size(100, 24);
+                lblPrice.Size = new Size(120, 24);
                 lblPrice.ForeColor = Color.FromArgb(50, 50, 50);
                 rowPanel.Controls.Add(lblPrice);
 
@@ -149,7 +149,7 @@ namespace ERP.UI
 
                 // 6. Subtotal
                 Label lblLineTotal = new Label();
-                lblLineTotal.Text = $"${lineTotal:F2}";
+                lblLineTotal.Text = $"{lineTotal:N2} TL";
                 lblLineTotal.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
                 lblLineTotal.Location = new Point(1000, 38);
                 lblLineTotal.Size = new Size(120, 24);
@@ -190,9 +190,9 @@ namespace ERP.UI
 
             // Calculations
             double total = subtotal + shipping;
-            lblSubtotalValue.Text = $"${subtotal:F2}";
-            lblShippingValue.Text = $"${shipping:F2}";
-            lblTotalValue.Text = $"${total:F2}";
+            lblSubtotalValue.Text = $"{subtotal:N2} TL";
+            lblShippingValue.Text = $"{shipping:N2} TL";
+            lblTotalValue.Text = $"{total:N2} TL";
 
             // Badge count in Header
             int totalQty = 0;

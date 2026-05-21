@@ -346,7 +346,7 @@ namespace ERP.UI
             txtMaxPrice.BorderColor = Color.FromArgb(240, 240, 240);
             txtMaxPrice.BorderRadius = 5;
             txtMaxPrice.CustomizableEdges = customizableEdges3;
-            txtMaxPrice.DefaultText = "1000";
+            txtMaxPrice.DefaultText = "15000";
             txtMaxPrice.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMaxPrice.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMaxPrice.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
@@ -404,13 +404,13 @@ namespace ERP.UI
             // tbPrice
             // 
             tbPrice.Location = new Point(15, 415);
-            tbPrice.Maximum = 1000;
+            tbPrice.Maximum = 15000;
             tbPrice.Minimum = 0;
             tbPrice.Name = "tbPrice";
             tbPrice.Size = new Size(230, 20);
             tbPrice.TabIndex = 6;
             tbPrice.ThumbColor = Color.FromArgb(33, 150, 243);
-            tbPrice.Value = 1000;
+            tbPrice.Value = 15000;
             tbPrice.ValueChanged += tbPrice_ValueChanged;
             // 
             // pnlCategories

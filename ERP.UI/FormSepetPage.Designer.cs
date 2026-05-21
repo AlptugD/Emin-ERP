@@ -268,7 +268,7 @@ namespace ERP.UI
             lblTotalValue.Name = "lblTotalValue";
             lblTotalValue.Size = new Size(150, 24);
             lblTotalValue.TabIndex = 5;
-            lblTotalValue.Text = "$0.00";
+            lblTotalValue.Text = "0,00 TL";
             lblTotalValue.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblShippingValue
@@ -280,7 +280,7 @@ namespace ERP.UI
             lblShippingValue.Name = "lblShippingValue";
             lblShippingValue.Size = new Size(150, 24);
             lblShippingValue.TabIndex = 4;
-            lblShippingValue.Text = "$5.00";
+            lblShippingValue.Text = "50,00 TL";
             lblShippingValue.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblSubtotalValue
@@ -292,7 +292,7 @@ namespace ERP.UI
             lblSubtotalValue.Name = "lblSubtotalValue";
             lblSubtotalValue.Size = new Size(150, 24);
             lblSubtotalValue.TabIndex = 3;
-            lblSubtotalValue.Text = "$0.00";
+            lblSubtotalValue.Text = "0,00 TL";
             lblSubtotalValue.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblTotalTitle
