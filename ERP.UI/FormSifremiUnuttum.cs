@@ -19,8 +19,8 @@ namespace ERP.UI
             {
                 _userManager.ResetPassword(txtKullaniciAdi.Text, txtYeniSifre.Text, txtSifreTekrar.Text);
                 MessageBox.Show("Şifreniz başarıyla güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                // Return to login
+
+
                 FormGiris loginForm = new FormGiris();
                 loginForm.Show();
                 this.Close();

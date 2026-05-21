@@ -2,15 +2,15 @@ namespace ERP.UI
 {
     partial class FormGiris
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
+
+
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +22,10 @@ namespace ERP.UI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
+
+
+
+
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -59,9 +59,9 @@ namespace ERP.UI
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnGirisYap
-            // 
+
+
+
             btnGirisYap.BorderRadius = 15;
             btnGirisYap.BorderThickness = 1;
             btnGirisYap.CustomizableEdges = customizableEdges1;
@@ -78,9 +78,9 @@ namespace ERP.UI
             btnGirisYap.TabIndex = 2;
             btnGirisYap.Text = "Giriş Yap";
             btnGirisYap.Click += btnGirisYap_Click;
-            // 
-            // btnKayitOl
-            // 
+
+
+
             btnKayitOl.BorderRadius = 15;
             btnKayitOl.CustomizableEdges = customizableEdges3;
             btnKayitOl.DisabledState.BorderColor = Color.DarkGray;
@@ -97,9 +97,9 @@ namespace ERP.UI
             btnKayitOl.TabIndex = 3;
             btnKayitOl.Text = "Kayıt Ol";
             btnKayitOl.Click += btnKayitOl_Click;
-            // 
-            // linkLabel1
-            // 
+
+
+
             linkLabel1.AutoSize = true;
             linkLabel1.LinkColor = Color.Black;
             linkLabel1.Location = new Point(1144, 450);
@@ -109,9 +109,9 @@ namespace ERP.UI
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Şifremi Unuttum";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
-            // guna2HtmlLabel1
-            // 
+
+
+
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel1.Location = new Point(51, 29);
@@ -119,18 +119,18 @@ namespace ERP.UI
             guna2HtmlLabel1.Size = new Size(3, 2);
             guna2HtmlLabel1.TabIndex = 5;
             guna2HtmlLabel1.Text = null;
-            // 
-            // guna2HtmlLabel2
-            // 
+
+
+
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Location = new Point(51, 78);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(161, 22);
             guna2HtmlLabel2.TabIndex = 6;
             guna2HtmlLabel2.Text = "Ürünleriniz Emin Ellerde";
-            // 
-            // guna2HtmlLabel3
-            // 
+
+
+
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel3.Location = new Point(593, 152);
@@ -138,9 +138,9 @@ namespace ERP.UI
             guna2HtmlLabel3.Size = new Size(285, 39);
             guna2HtmlLabel3.TabIndex = 7;
             guna2HtmlLabel3.Text = "Hesabınıza Giriş Yapınız";
-            // 
-            // guna2HtmlLabel4
-            // 
+
+
+
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel4.Location = new Point(593, 217);
@@ -148,9 +148,9 @@ namespace ERP.UI
             guna2HtmlLabel4.Size = new Size(153, 19);
             guna2HtmlLabel4.TabIndex = 8;
             guna2HtmlLabel4.Text = "E posta Veya Kullanıcı Adı";
-            // 
-            // guna2HtmlLabel5
-            // 
+
+
+
             guna2HtmlLabel5.BackColor = Color.Transparent;
             guna2HtmlLabel5.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel5.Location = new Point(593, 319);
@@ -158,9 +158,9 @@ namespace ERP.UI
             guna2HtmlLabel5.Size = new Size(29, 19);
             guna2HtmlLabel5.TabIndex = 9;
             guna2HtmlLabel5.Text = "Şifre";
-            // 
-            // guna2HtmlLabel6
-            // 
+
+
+
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Segoe UI", 18F);
             guna2HtmlLabel6.Location = new Point(63, 12);
@@ -168,9 +168,9 @@ namespace ERP.UI
             guna2HtmlLabel6.Size = new Size(126, 43);
             guna2HtmlLabel6.TabIndex = 11;
             guna2HtmlLabel6.Text = "Emin ERP";
-            // 
-            // guna2HtmlLabel7
-            // 
+
+
+
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Segoe UI", 14F);
             guna2HtmlLabel7.Location = new Point(669, 162);
@@ -178,32 +178,32 @@ namespace ERP.UI
             guna2HtmlLabel7.Size = new Size(246, 33);
             guna2HtmlLabel7.TabIndex = 12;
             guna2HtmlLabel7.Text = "Hesabınıza Giriş Yapınız";
-            // 
-            // guna2HtmlLabel8
-            // 
+
+
+
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Location = new Point(669, 253);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(174, 22);
             guna2HtmlLabel8.TabIndex = 13;
             guna2HtmlLabel8.Text = "E Posta Veya Kullanıcı Adı";
-            // 
-            // guna2HtmlLabel9
-            // 
+
+
+
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.Location = new Point(669, 357);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(33, 22);
             guna2HtmlLabel9.TabIndex = 14;
             guna2HtmlLabel9.Text = "Şifre";
-            // 
-            // guna2Elipse1
-            // 
+
+
+
             guna2Elipse1.BorderRadius = 15;
             guna2Elipse1.TargetControl = this;
-            // 
-            // guna2PictureBox1
-            // 
+
+
+
             guna2PictureBox1.BorderRadius = 20;
             guna2PictureBox1.CustomizableEdges = customizableEdges9;
             guna2PictureBox1.Image = Properties.Resources.side_image;
@@ -214,9 +214,9 @@ namespace ERP.UI
             guna2PictureBox1.Size = new Size(595, 514);
             guna2PictureBox1.TabIndex = 15;
             guna2PictureBox1.TabStop = false;
-            // 
-            // txtKullaniciAdi
-            // 
+
+
+
             txtKullaniciAdi.BorderColor = Color.Black;
             txtKullaniciAdi.BorderRadius = 8;
             txtKullaniciAdi.CustomizableEdges = customizableEdges7;
@@ -236,9 +236,9 @@ namespace ERP.UI
             txtKullaniciAdi.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtKullaniciAdi.Size = new Size(604, 61);
             txtKullaniciAdi.TabIndex = 16;
-            // 
-            // txtSifre
-            // 
+
+
+
             txtSifre.BorderColor = Color.Black;
             txtSifre.BorderRadius = 8;
             txtSifre.CustomizableEdges = customizableEdges5;
@@ -260,9 +260,9 @@ namespace ERP.UI
             txtSifre.Size = new Size(604, 61);
             txtSifre.TabIndex = 17;
             txtSifre.UseSystemPasswordChar = true;
-            // 
-            // lblGizleGoster
-            // 
+
+
+
             lblGizleGoster.BackColor = Color.Transparent;
             lblGizleGoster.Location = new Point(1189, 404);
             lblGizleGoster.Name = "lblGizleGoster";
@@ -271,9 +271,9 @@ namespace ERP.UI
             lblGizleGoster.TabIndex = 18;
             lblGizleGoster.Text = "Göster";
             lblGizleGoster.Click += lblGizleGoster_Click;
-            // 
-            // guna2HtmlLabel10
-            // 
+
+
+
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel10.ForeColor = Color.FromArgb(127, 140, 141);
@@ -282,9 +282,9 @@ namespace ERP.UI
             guna2HtmlLabel10.Size = new Size(185, 25);
             guna2HtmlLabel10.TabIndex = 19;
             guna2HtmlLabel10.Text = "Ürünleriniz emin ellerde";
-            // 
-            // Form1
-            // 
+
+
+
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1353, 713);

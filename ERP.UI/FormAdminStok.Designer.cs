@@ -42,7 +42,7 @@ namespace ERP.UI
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
 
-            // pnlHeader
+
             this.pnlHeader.FillColor = Color.FromArgb(22, 22, 40);
             this.pnlHeader.BorderRadius = 0;
             this.pnlHeader.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -54,7 +54,7 @@ namespace ERP.UI
             this.pnlHeader.Controls.Add(this.txtSearch);
             this.pnlHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
 
-            // lblAdminBadge
+
             this.lblAdminBadge.Text = "ADMIN";
             this.lblAdminBadge.Font = new Font("Segoe UI Semibold", 7.5f, FontStyle.Bold);
             this.lblAdminBadge.ForeColor = Color.FromArgb(22, 22, 40);
@@ -64,7 +64,7 @@ namespace ERP.UI
             this.lblAdminBadge.TextAlign = ContentAlignment.MiddleCenter;
             this.lblAdminBadge.AutoSize = false;
 
-            // lblTitle
+
             this.lblTitle.Text = "Stok Yönetimi";
             this.lblTitle.Font = new Font("Segoe UI", 20f, FontStyle.Bold);
             this.lblTitle.ForeColor = Color.White;
@@ -73,7 +73,7 @@ namespace ERP.UI
             this.lblTitle.Size = new Size(300, 36);
             this.lblTitle.AutoSize = false;
 
-            // lblSubtitle
+
             this.lblSubtitle.Text = "Ürün stoklarını liste görünümünden anlık olarak düzenleyin.";
             this.lblSubtitle.Font = new Font("Segoe UI", 9.5f);
             this.lblSubtitle.ForeColor = Color.FromArgb(170, 170, 195);
@@ -82,7 +82,7 @@ namespace ERP.UI
             this.lblSubtitle.Size = new Size(450, 22);
             this.lblSubtitle.AutoSize = false;
 
-            // txtSearch
+
             this.txtSearch.BackColor = Color.Transparent;
             this.txtSearch.BorderRadius = 15;
             this.txtSearch.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -104,7 +104,7 @@ namespace ERP.UI
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
 
-            // flowLayoutProducts
+
             this.flowLayoutProducts.Location = new Point(20, 108);
             this.flowLayoutProducts.Size = new Size(950, 480);
             this.flowLayoutProducts.AutoScroll = true;
@@ -113,7 +113,7 @@ namespace ERP.UI
             this.flowLayoutProducts.BackColor = Color.FromArgb(248, 248, 252);
             this.flowLayoutProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
 
-            // lblHint
+
             this.lblHint.Text = "💡  Stok değerlerini değiştirin. Stok = 0 olan ürünler müşterilerin mağaza listesinde gizlenir.";
             this.lblHint.Font = new Font("Segoe UI", 9f);
             this.lblHint.ForeColor = Color.FromArgb(120, 120, 140);
@@ -121,7 +121,7 @@ namespace ERP.UI
             this.lblHint.Size = new Size(520, 22);
             this.lblHint.AutoSize = false;
 
-            // btnMagazayaGit
+
             this.btnMagazayaGit.Text = "🛍  Mağazaya Git";
             this.btnMagazayaGit.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
             this.btnMagazayaGit.FillColor = Color.FromArgb(40, 110, 220);
@@ -135,7 +135,7 @@ namespace ERP.UI
             this.btnMagazayaGit.Click += new System.EventHandler(this.btnMagazayaGit_Click);
             this.btnMagazayaGit.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 
-            // btnKaydet
+
             this.btnKaydet.Text = "💾  Stokları Güncelle";
             this.btnKaydet.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
             this.btnKaydet.FillColor = Color.FromArgb(28, 160, 105);
@@ -149,7 +149,7 @@ namespace ERP.UI
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             this.btnKaydet.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
 
-            // FormAdminStok
+
             this.ClientSize = new Size(1000, 675);
             this.Text = "Admin – Stok Yönetimi | Emin ERP";
             this.BackColor = Color.FromArgb(248, 248, 252);

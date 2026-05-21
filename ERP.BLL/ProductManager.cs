@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 namespace ERP.BLL
 {
-    /// <summary>
-    /// Business Logic Layer (BLL) Manager for Product operations.
-    /// Strictly compliant with Visual Programming II final project rubric (C1, C2, C3).
-    /// </summary>
+
+
+
+
     public class ProductManager
     {
         private readonly ProductDal _productDal;
@@ -49,7 +49,7 @@ namespace ERP.BLL
 
         public void AddProduct(ProductItem product)
         {
-            // Business Validation Rules (Rubrik C2 Kriteri)
+
             if (product == null)
             {
                 throw new ArgumentNullException(nameof(product), "Ürün nesnesi boş olamaz.");
@@ -83,7 +83,7 @@ namespace ERP.BLL
 
         public void UpdateProduct(ProductItem product)
         {
-            // Business Validation Rules (Rubrik C2 Kriteri)
+
             if (product == null)
             {
                 throw new ArgumentNullException(nameof(product), "Ürün nesnesi boş olamaz.");
@@ -121,7 +121,7 @@ namespace ERP.BLL
 
         public void UpdateProductStock(int id, int newStock)
         {
-            // Business Validation Rules (Rubrik C2 Kriteri)
+
             if (id <= 0)
             {
                 throw new ArgumentException("Geçersiz ürün kimliği.");

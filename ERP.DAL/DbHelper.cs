@@ -44,10 +44,10 @@ namespace ERP.DAL
                                 Password NVARCHAR(250) NOT NULL,
                                 Role NVARCHAR(20) DEFAULT 'Staff'
                             );
-                            
+
                             IF NOT EXISTS (SELECT * FROM Users WHERE Username = 'admin')
                             BEGIN
-                                INSERT INTO Users (Username, Password, Role) 
+                                INSERT INTO Users (Username, Password, Role)
                                 VALUES ('admin', '123456', 'Admin');
                             END;
                         ";
@@ -55,7 +55,7 @@ namespace ERP.DAL
                         createTableCmd.ExecuteNonQuery();
                     }
 
-                    // Products tablosunu sorgula ve oluştur (Rubrik B1 Kriteri)
+
                     SqlCommand checkProductsTableCmd = new SqlCommand("SELECT OBJECT_ID(N'EminERP_DB.dbo.Products', N'U')", conn);
                     var productsTableId = checkProductsTableCmd.ExecuteScalar();
                     if (productsTableId == null || productsTableId == DBNull.Value)
@@ -76,14 +76,14 @@ namespace ERP.DAL
                         createProductsTableCmd.ExecuteNonQuery();
                     }
 
-                    // Eğer Products tablosu boşsa varsayılan verileri otomatik seed et (Rubrik E1/B1 Kriteri)
+
                     SqlCommand countProductsCmd = new SqlCommand("SELECT COUNT(*) FROM Products", conn);
                     int productCount = (int)countProductsCmd.ExecuteScalar();
                     if (productCount == 0)
                     {
                         string seedProductsSql = @"
                             INSERT INTO Products (Name, Brand, Price, Category, ImageFileName, PrimaryColorArgb, Stock)
-                            VALUES 
+                            VALUES
                             (N'Mavi Premium Kablosuz Kulaklık', N'ProCompute', 3499.00, N'Kablosuz Kulaklıklar', N'blue_headphones.png', -10579516, 10),
                             (N'Taşınabilir Oyun Konsolu', N'PlayAnywhere', 12999.00, N'Masaüstü Bilgisayarlar', N'white_controller.png', -2305818, 5),
                             (N'Çiçek Desenli Tablet Kılıfı', N'SkinArt', 699.00, N'Kılıflar & Ekran Koruyucular', N'tablet_case.png', -991433, 0),

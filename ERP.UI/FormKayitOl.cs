@@ -19,8 +19,8 @@ namespace ERP.UI
             {
                 _userManager.Register(txtKullaniciAdi.Text, txtSifre.Text, txtSifreTekrar.Text);
                 MessageBox.Show("Kayıt başarıyla oluşturuldu!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
-                // Return to login
+
+
                 FormGiris loginForm = new FormGiris();
                 loginForm.Show();
                 this.Close();

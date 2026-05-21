@@ -2,15 +2,15 @@ namespace ERP.UI
 {
     partial class FormSifremiUnuttum
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
+
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +22,10 @@ namespace ERP.UI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+
+
+
+
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -56,9 +56,9 @@ namespace ERP.UI
             guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // btnSifreSifirla
-            // 
+
+
+
             btnSifreSifirla.BorderRadius = 15;
             btnSifreSifirla.BorderThickness = 1;
             btnSifreSifirla.CustomizableEdges = customizableEdges1;
@@ -75,9 +75,9 @@ namespace ERP.UI
             btnSifreSifirla.TabIndex = 4;
             btnSifreSifirla.Text = "Şifreyi Güncelle";
             btnSifreSifirla.Click += btnSifreSifirla_Click;
-            // 
-            // btnGirisYapDon
-            // 
+
+
+
             btnGirisYapDon.BorderRadius = 15;
             btnGirisYapDon.BorderThickness = 1;
             btnGirisYapDon.CustomizableEdges = customizableEdges3;
@@ -95,9 +95,9 @@ namespace ERP.UI
             btnGirisYapDon.TabIndex = 5;
             btnGirisYapDon.Text = "Giriş Ekranına Dön";
             btnGirisYapDon.Click += btnGirisYapDon_Click;
-            // 
-            // guna2HtmlLabel6
-            // 
+
+
+
             guna2HtmlLabel6.BackColor = Color.Transparent;
             guna2HtmlLabel6.Font = new Font("Segoe UI", 18F);
             guna2HtmlLabel6.Location = new Point(63, 12);
@@ -105,9 +105,9 @@ namespace ERP.UI
             guna2HtmlLabel6.Size = new Size(126, 43);
             guna2HtmlLabel6.TabIndex = 11;
             guna2HtmlLabel6.Text = "Emin ERP";
-            // 
-            // guna2HtmlLabel7
-            // 
+
+
+
             guna2HtmlLabel7.BackColor = Color.Transparent;
             guna2HtmlLabel7.Font = new Font("Segoe UI", 14F);
             guna2HtmlLabel7.Location = new Point(669, 140);
@@ -115,41 +115,41 @@ namespace ERP.UI
             guna2HtmlLabel7.Size = new Size(180, 33);
             guna2HtmlLabel7.TabIndex = 12;
             guna2HtmlLabel7.Text = "Şifremi Unuttum";
-            // 
-            // guna2HtmlLabel8
-            // 
+
+
+
             guna2HtmlLabel8.BackColor = Color.Transparent;
             guna2HtmlLabel8.Location = new Point(669, 210);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(95, 22);
             guna2HtmlLabel8.TabIndex = 13;
             guna2HtmlLabel8.Text = "Kullanıcı Adı";
-            // 
-            // guna2HtmlLabel9
-            // 
+
+
+
             guna2HtmlLabel9.BackColor = Color.Transparent;
             guna2HtmlLabel9.Location = new Point(669, 305);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(68, 22);
             guna2HtmlLabel9.TabIndex = 14;
             guna2HtmlLabel9.Text = "Yeni Şifre";
-            // 
-            // guna2HtmlLabel11
-            // 
+
+
+
             guna2HtmlLabel11.BackColor = Color.Transparent;
             guna2HtmlLabel11.Location = new Point(669, 400);
             guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             guna2HtmlLabel11.Size = new Size(111, 22);
             guna2HtmlLabel11.TabIndex = 15;
             guna2HtmlLabel11.Text = "Yeni Şifre Tekrar";
-            // 
-            // guna2Elipse1
-            // 
+
+
+
             guna2Elipse1.BorderRadius = 15;
             guna2Elipse1.TargetControl = this;
-            // 
-            // guna2PictureBox1
-            // 
+
+
+
             guna2PictureBox1.BorderRadius = 20;
             guna2PictureBox1.CustomizableEdges = customizableEdges5;
             guna2PictureBox1.Image = Properties.Resources.side_image;
@@ -160,9 +160,9 @@ namespace ERP.UI
             guna2PictureBox1.Size = new Size(595, 514);
             guna2PictureBox1.TabIndex = 15;
             guna2PictureBox1.TabStop = false;
-            // 
-            // txtKullaniciAdi
-            // 
+
+
+
             txtKullaniciAdi.BorderColor = Color.Black;
             txtKullaniciAdi.BorderRadius = 8;
             txtKullaniciAdi.CustomizableEdges = customizableEdges7;
@@ -182,9 +182,9 @@ namespace ERP.UI
             txtKullaniciAdi.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtKullaniciAdi.Size = new Size(604, 50);
             txtKullaniciAdi.TabIndex = 1;
-            // 
-            // txtYeniSifre
-            // 
+
+
+
             txtYeniSifre.BorderColor = Color.Black;
             txtYeniSifre.BorderRadius = 8;
             txtYeniSifre.CustomizableEdges = customizableEdges9;
@@ -206,9 +206,9 @@ namespace ERP.UI
             txtYeniSifre.Size = new Size(604, 50);
             txtYeniSifre.TabIndex = 2;
             txtYeniSifre.UseSystemPasswordChar = true;
-            // 
-            // txtSifreTekrar
-            // 
+
+
+
             txtSifreTekrar.BorderColor = Color.Black;
             txtSifreTekrar.BorderRadius = 8;
             txtSifreTekrar.CustomizableEdges = customizableEdges11;
@@ -230,9 +230,9 @@ namespace ERP.UI
             txtSifreTekrar.Size = new Size(604, 50);
             txtSifreTekrar.TabIndex = 3;
             txtSifreTekrar.UseSystemPasswordChar = true;
-            // 
-            // guna2HtmlLabel10
-            // 
+
+
+
             guna2HtmlLabel10.BackColor = Color.Transparent;
             guna2HtmlLabel10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             guna2HtmlLabel10.ForeColor = Color.FromArgb(127, 140, 141);
@@ -241,9 +241,9 @@ namespace ERP.UI
             guna2HtmlLabel10.Size = new Size(185, 25);
             guna2HtmlLabel10.TabIndex = 19;
             guna2HtmlLabel10.Text = "Ürünleriniz emin ellerde";
-            // 
-            // FormSifremiUnuttum
-            // 
+
+
+
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1353, 713);

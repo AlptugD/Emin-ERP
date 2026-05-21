@@ -2,15 +2,15 @@ namespace ERP.UI
 {
     partial class FormAnaMenu
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+
+
+
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +22,10 @@ namespace ERP.UI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+
+
+
+
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -85,9 +85,9 @@ namespace ERP.UI
             pnlSidebar.SuspendLayout();
             pnlHeader.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnlMainContainer
-            // 
+
+
+
             pnlMainContainer.AutoScroll = true;
             pnlMainContainer.Controls.Add(pnlContent);
             pnlMainContainer.Controls.Add(pnlHeader);
@@ -98,9 +98,9 @@ namespace ERP.UI
             pnlMainContainer.ShadowDecoration.CustomizableEdges = customizableEdges14;
             pnlMainContainer.Size = new Size(1370, 750);
             pnlMainContainer.TabIndex = 0;
-            // 
-            // pnlContent
-            // 
+
+
+
             pnlContent.Controls.Add(pnlFooter);
             pnlContent.Controls.Add(pnlSeoSection);
             pnlContent.Controls.Add(flowLayoutProducts);
@@ -113,9 +113,9 @@ namespace ERP.UI
             pnlContent.ShadowDecoration.CustomizableEdges = customizableEdges2;
             pnlContent.Size = new Size(1349, 1420);
             pnlContent.TabIndex = 1;
-            // 
-            // pnlFooter
-            // 
+
+
+
             pnlFooter.BackColor = Color.FromArgb(44, 53, 57);
             pnlFooter.Controls.Add(lblCopyright);
             pnlFooter.Controls.Add(pnlFooterLinks);
@@ -126,9 +126,9 @@ namespace ERP.UI
             pnlFooter.ShadowDecoration.CustomizableEdges = customizableEdges4;
             pnlFooter.Size = new Size(1349, 280);
             pnlFooter.TabIndex = 4;
-            // 
-            // lblCopyright
-            // 
+
+
+
             lblCopyright.BackColor = Color.Transparent;
             lblCopyright.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblCopyright.ForeColor = Color.DarkGray;
@@ -137,9 +137,9 @@ namespace ERP.UI
             lblCopyright.Size = new Size(385, 22);
             lblCopyright.TabIndex = 1;
             lblCopyright.Text = "Copyright © 2026 Emin ERP (Euphoria). All rights reserved.";
-            // 
-            // pnlFooterLinks
-            // 
+
+
+
             pnlFooterLinks.Controls.Add(lblFooterCol4);
             pnlFooterLinks.Controls.Add(lblFooterCol3);
             pnlFooterLinks.Controls.Add(lblFooterCol2);
@@ -150,9 +150,9 @@ namespace ERP.UI
             pnlFooterLinks.ShadowDecoration.CustomizableEdges = customizableEdges6;
             pnlFooterLinks.Size = new Size(1150, 190);
             pnlFooterLinks.TabIndex = 0;
-            // 
-            // lblFooterCol4
-            // 
+
+
+
             lblFooterCol4.BackColor = Color.Transparent;
             lblFooterCol4.Font = new Font("Segoe UI", 9.5F);
             lblFooterCol4.ForeColor = Color.White;
@@ -161,9 +161,9 @@ namespace ERP.UI
             lblFooterCol4.Size = new Size(198, 150);
             lblFooterCol4.TabIndex = 3;
             lblFooterCol4.Text = "<b>Location</b><br/><br/>support@eminErp.com<br/>Samsun / Kavak<br/>Türkiye";
-            // 
-            // lblFooterCol3
-            // 
+
+
+
             lblFooterCol3.BackColor = Color.Transparent;
             lblFooterCol3.Font = new Font("Segoe UI", 9.5F);
             lblFooterCol3.ForeColor = Color.White;
@@ -172,9 +172,9 @@ namespace ERP.UI
             lblFooterCol3.Size = new Size(180, 150);
             lblFooterCol3.TabIndex = 2;
             lblFooterCol3.Text = "<b>More Info</b><br/><br/>Terms and Conditions<br/>Privacy Policy<br/>Shipping Policy<br/>Sitemap";
-            // 
-            // lblFooterCol2
-            // 
+
+
+
             lblFooterCol2.BackColor = Color.Transparent;
             lblFooterCol2.Font = new Font("Segoe UI", 9.5F);
             lblFooterCol2.ForeColor = Color.White;
@@ -183,9 +183,9 @@ namespace ERP.UI
             lblFooterCol2.Size = new Size(150, 150);
             lblFooterCol2.TabIndex = 1;
             lblFooterCol2.Text = "<b>Company</b><br/><br/>About Us<br/>euphoria Blog<br/>euphoriastan<br/>Collaboration<br/>Media";
-            // 
-            // lblFooterCol1
-            // 
+
+
+
             lblFooterCol1.BackColor = Color.Transparent;
             lblFooterCol1.Font = new Font("Segoe UI", 9.5F);
             lblFooterCol1.ForeColor = Color.White;
@@ -194,9 +194,9 @@ namespace ERP.UI
             lblFooterCol1.Size = new Size(150, 150);
             lblFooterCol1.TabIndex = 0;
             lblFooterCol1.Text = "<b>Need Help</b><br/><br/>Contact Us<br/>Track Order<br/>Returns & Refunds<br/>FAQ's<br/>Career";
-            // 
-            // pnlSeoSection
-            // 
+
+
+
             pnlSeoSection.Controls.Add(btnDahaFazlaGor);
             pnlSeoSection.Controls.Add(lblSeoDescription);
             pnlSeoSection.Controls.Add(lblSeoSubTitle);
@@ -207,9 +207,9 @@ namespace ERP.UI
             pnlSeoSection.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnlSeoSection.Size = new Size(1000, 290);
             pnlSeoSection.TabIndex = 3;
-            // 
-            // btnDahaFazlaGor
-            // 
+
+
+
             btnDahaFazlaGor.AutoSize = true;
             btnDahaFazlaGor.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             btnDahaFazlaGor.LinkColor = Color.FromArgb(142, 68, 173);
@@ -220,9 +220,9 @@ namespace ERP.UI
             btnDahaFazlaGor.TabStop = true;
             btnDahaFazlaGor.Text = "[ Daha Fazla Gör ]";
             btnDahaFazlaGor.LinkClicked += btnDahaFazlaGor_LinkClicked;
-            // 
-            // lblSeoDescription
-            // 
+
+
+
             lblSeoDescription.AutoSize = false;
             lblSeoDescription.BackColor = Color.Transparent;
             lblSeoDescription.Font = new Font("Segoe UI", 9.5F);
@@ -232,9 +232,9 @@ namespace ERP.UI
             lblSeoDescription.Size = new Size(970, 140);
             lblSeoDescription.TabIndex = 2;
             lblSeoDescription.Text = "Teknoloji Ürünleri – Türkiye'de online teknoloji alışverişi yapmak için en iyi web sitesini mi arıyorsunuz? O halde, yenilikçi ve güçlü teknolojik cihazlar için arayışınız burada sona eriyor. Günlük kullanıma uygun pratik akıllı cihazlardan, üst düzey performans sunan premium donanımlara kadar Emin Ticaret, en güncel ve en iyi teknoloji koleksiyonunu tek bir çatı altında sunuyor. Geniş teknoloji ürünleri yelpazemiz, seçimlerinizle dijital dünyada fark yaratmanızı ve her zaman bir adım önde olmanızı sağlayacak.";
-            // 
-            // lblSeoSubTitle
-            // 
+
+
+
             lblSeoSubTitle.BackColor = Color.Transparent;
             lblSeoSubTitle.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             lblSeoSubTitle.ForeColor = Color.FromArgb(44, 62, 80);
@@ -243,9 +243,9 @@ namespace ERP.UI
             lblSeoSubTitle.Size = new Size(420, 27);
             lblSeoSubTitle.TabIndex = 1;
             lblSeoSubTitle.Text = "Emin Ticaret'te Teknoloji Koleksiyonunu Yeniden Keşfedin";
-            // 
-            // lblSeoTitle
-            // 
+
+
+
             lblSeoTitle.BackColor = Color.Transparent;
             lblSeoTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblSeoTitle.ForeColor = Color.Black;
@@ -254,16 +254,16 @@ namespace ERP.UI
             lblSeoTitle.Size = new Size(436, 33);
             lblSeoTitle.TabIndex = 0;
             lblSeoTitle.Text = "■ Türkiye'de Online Teknoloji Alışverişi";
-            // 
-            // flowLayoutProducts
-            // 
+
+
+
             flowLayoutProducts.Location = new Point(310, 60);
             flowLayoutProducts.Name = "flowLayoutProducts";
             flowLayoutProducts.Size = new Size(1010, 780);
             flowLayoutProducts.TabIndex = 2;
-            // 
-            // pnlProductHeader
-            // 
+
+
+
             pnlProductHeader.Controls.Add(lblTabOnerilenler);
             pnlProductHeader.Controls.Add(lblTabYeni);
             pnlProductHeader.Controls.Add(lblProductsTitle);
@@ -273,9 +273,9 @@ namespace ERP.UI
             pnlProductHeader.ShadowDecoration.CustomizableEdges = customizableEdges10;
             pnlProductHeader.Size = new Size(1000, 45);
             pnlProductHeader.TabIndex = 1;
-            // 
-            // lblTabOnerilenler
-            // 
+
+
+
             lblTabOnerilenler.BackColor = Color.Transparent;
             lblTabOnerilenler.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblTabOnerilenler.ForeColor = Color.DarkGray;
@@ -284,9 +284,9 @@ namespace ERP.UI
             lblTabOnerilenler.Size = new Size(95, 25);
             lblTabOnerilenler.TabIndex = 2;
             lblTabOnerilenler.Text = "Önerilenler";
-            // 
-            // lblTabYeni
-            // 
+
+
+
             lblTabYeni.BackColor = Color.Transparent;
             lblTabYeni.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblTabYeni.ForeColor = Color.FromArgb(142, 68, 173);
@@ -295,9 +295,9 @@ namespace ERP.UI
             lblTabYeni.Size = new Size(35, 25);
             lblTabYeni.TabIndex = 1;
             lblTabYeni.Text = "Yeni";
-            // 
-            // lblProductsTitle
-            // 
+
+
+
             lblProductsTitle.BackColor = Color.Transparent;
             lblProductsTitle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             lblProductsTitle.Location = new Point(15, 10);
@@ -305,9 +305,9 @@ namespace ERP.UI
             lblProductsTitle.Size = new Size(244, 30);
             lblProductsTitle.TabIndex = 0;
             lblProductsTitle.Text = "Öne Çıkan Teknoloji Ürünleri";
-            // 
-            // pnlSidebar
-            // 
+
+
+
             pnlSidebar.Controls.Add(btnFiltrele);
             pnlSidebar.Controls.Add(txtMaxPrice);
             pnlSidebar.Controls.Add(txtMinPrice);
@@ -321,9 +321,9 @@ namespace ERP.UI
             pnlSidebar.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pnlSidebar.Size = new Size(260, 750);
             pnlSidebar.TabIndex = 0;
-            // 
-            // btnFiltrele
-            // 
+
+
+
             btnFiltrele.BorderRadius = 8;
             btnFiltrele.CustomizableEdges = customizableEdges1;
             btnFiltrele.DisabledState.BorderColor = Color.DarkGray;
@@ -340,9 +340,9 @@ namespace ERP.UI
             btnFiltrele.TabIndex = 5;
             btnFiltrele.Text = "filtrele";
             btnFiltrele.Click += btnFiltrele_Click;
-            // 
-            // txtMaxPrice
-            // 
+
+
+
             txtMaxPrice.BorderColor = Color.FromArgb(240, 240, 240);
             txtMaxPrice.BorderRadius = 5;
             txtMaxPrice.CustomizableEdges = customizableEdges3;
@@ -365,9 +365,9 @@ namespace ERP.UI
             txtMaxPrice.TabIndex = 4;
             txtMaxPrice.TextAlign = HorizontalAlignment.Center;
             txtMaxPrice.TextChanged += txtMaxPrice_TextChanged;
-            // 
-            // txtMinPrice
-            // 
+
+
+
             txtMinPrice.BorderColor = Color.FromArgb(240, 240, 240);
             txtMinPrice.BorderRadius = 5;
             txtMinPrice.CustomizableEdges = customizableEdges5;
@@ -390,9 +390,9 @@ namespace ERP.UI
             txtMinPrice.TabIndex = 3;
             txtMinPrice.TextAlign = HorizontalAlignment.Center;
             txtMinPrice.TextChanged += txtMinPrice_TextChanged;
-            // 
-            // lblPriceFilterTitle
-            // 
+
+
+
             lblPriceFilterTitle.BackColor = Color.Transparent;
             lblPriceFilterTitle.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             lblPriceFilterTitle.Location = new Point(15, 385);
@@ -400,9 +400,9 @@ namespace ERP.UI
             lblPriceFilterTitle.Size = new Size(124, 23);
             lblPriceFilterTitle.TabIndex = 2;
             lblPriceFilterTitle.Text = "Fiyat Aralığı Belirle";
-            // 
-            // tbPrice
-            // 
+
+
+
             tbPrice.Location = new Point(15, 415);
             tbPrice.Maximum = 15000;
             tbPrice.Minimum = 0;
@@ -412,18 +412,18 @@ namespace ERP.UI
             tbPrice.ThumbColor = Color.FromArgb(33, 150, 243);
             tbPrice.Value = 15000;
             tbPrice.ValueChanged += tbPrice_ValueChanged;
-            // 
-            // pnlCategories
-            // 
+
+
+
             pnlCategories.CustomizableEdges = customizableEdges7;
             pnlCategories.Location = new Point(5, 50);
             pnlCategories.Name = "pnlCategories";
             pnlCategories.ShadowDecoration.CustomizableEdges = customizableEdges8;
             pnlCategories.Size = new Size(250, 330);
             pnlCategories.TabIndex = 1;
-            // 
-            // lblFilterHeader
-            // 
+
+
+
             lblFilterHeader.BackColor = Color.Transparent;
             lblFilterHeader.Font = new Font("Segoe UI Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblFilterHeader.Location = new Point(15, 15);
@@ -431,9 +431,9 @@ namespace ERP.UI
             lblFilterHeader.Size = new Size(42, 27);
             lblFilterHeader.TabIndex = 0;
             lblFilterHeader.Text = "Filter";
-            // 
-            // pnlHeader
-            // 
+
+
+
             pnlHeader.BackColor = Color.White;
             pnlHeader.BorderColor = Color.FromArgb(240, 240, 240);
             pnlHeader.BorderThickness = 1;
@@ -450,9 +450,9 @@ namespace ERP.UI
             pnlHeader.ShadowDecoration.CustomizableEdges = customizableEdges12;
             pnlHeader.Size = new Size(1349, 100);
             pnlHeader.TabIndex = 0;
-            // 
-            // btnCart
-            // 
+
+
+
             btnCart.BorderRadius = 18;
             btnCart.CustomizableEdges = customizableEdges1;
             btnCart.DisabledState.BorderColor = Color.DarkGray;
@@ -468,9 +468,9 @@ namespace ERP.UI
             btnCart.Size = new Size(36, 36);
             btnCart.TabIndex = 5;
             btnCart.Text = "🛒";
-            // 
-            // btnProfile
-            // 
+
+
+
             btnProfile.BorderRadius = 18;
             btnProfile.CustomizableEdges = customizableEdges3;
             btnProfile.DisabledState.BorderColor = Color.DarkGray;
@@ -486,9 +486,9 @@ namespace ERP.UI
             btnProfile.Size = new Size(36, 36);
             btnProfile.TabIndex = 4;
             btnProfile.Text = "👤";
-            // 
-            // btnFavorites
-            // 
+
+
+
             btnFavorites.BorderRadius = 18;
             btnFavorites.CustomizableEdges = customizableEdges5;
             btnFavorites.DisabledState.BorderColor = Color.DarkGray;
@@ -504,9 +504,9 @@ namespace ERP.UI
             btnFavorites.Size = new Size(36, 36);
             btnFavorites.TabIndex = 3;
             btnFavorites.Text = "🤍";
-            // 
-            // txtSearch
-            // 
+
+
+
             txtSearch.BorderColor = Color.DarkGray;
             txtSearch.BorderRadius = 15;
             txtSearch.CustomizableEdges = customizableEdges7;
@@ -527,9 +527,9 @@ namespace ERP.UI
             txtSearch.Size = new Size(320, 38);
             txtSearch.TabIndex = 2;
             txtSearch.TextChanged += txtSearch_TextChanged;
-            // 
-            // lblHeaderSubTitle
-            // 
+
+
+
             lblHeaderSubTitle.BackColor = Color.Transparent;
             lblHeaderSubTitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
             lblHeaderSubTitle.ForeColor = Color.FromArgb(127, 140, 141);
@@ -538,9 +538,9 @@ namespace ERP.UI
             lblHeaderSubTitle.Size = new Size(153, 22);
             lblHeaderSubTitle.TabIndex = 1;
             lblHeaderSubTitle.Text = "Ürünleriniz emin ellerde";
-            // 
-            // lblHeaderTitle
-            // 
+
+
+
             lblHeaderTitle.BackColor = Color.Transparent;
             lblHeaderTitle.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 162);
             lblHeaderTitle.Location = new Point(63, 12);
@@ -548,9 +548,9 @@ namespace ERP.UI
             lblHeaderTitle.Size = new Size(126, 43);
             lblHeaderTitle.TabIndex = 0;
             lblHeaderTitle.Text = "EMİN ERP";
-            // 
-            // FormAnaMenu
-            // 
+
+
+
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;

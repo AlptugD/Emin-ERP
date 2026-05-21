@@ -6,10 +6,10 @@ using System.Drawing;
 
 namespace ERP.DAL
 {
-    /// <summary>
-    /// Data Access Layer (DAL) for Product items.
-    /// Strictly compliant with Visual Programming II final project rubric (B1, B2, B3, B4).
-    /// </summary>
+
+
+
+
     public class ProductDal
     {
         public List<ProductItem> GetAll()
@@ -75,7 +75,7 @@ namespace ERP.DAL
 
         public void Insert(ProductItem product)
         {
-            string query = @"INSERT INTO Products (Name, Brand, Price, Category, ImageFileName, PrimaryColorArgb, Stock) 
+            string query = @"INSERT INTO Products (Name, Brand, Price, Category, ImageFileName, PrimaryColorArgb, Stock)
                              VALUES (@Name, @Brand, @Price, @Category, @ImageFileName, @PrimaryColorArgb, @Stock)";
 
             using (SqlConnection conn = DbHelper.GetConnection())
@@ -96,9 +96,9 @@ namespace ERP.DAL
 
         public void Update(ProductItem product)
         {
-            string query = @"UPDATE Products 
-                             SET Name = @Name, Brand = @Brand, Price = @Price, Category = @Category, 
-                                 ImageFileName = @ImageFileName, PrimaryColorArgb = @PrimaryColorArgb, Stock = @Stock 
+            string query = @"UPDATE Products
+                             SET Name = @Name, Brand = @Brand, Price = @Price, Category = @Category,
+                                 ImageFileName = @ImageFileName, PrimaryColorArgb = @PrimaryColorArgb, Stock = @Stock
                              WHERE Id = @Id";
 
             using (SqlConnection conn = DbHelper.GetConnection())

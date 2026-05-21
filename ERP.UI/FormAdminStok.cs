@@ -32,7 +32,7 @@ namespace ERP.UI
 
             foreach (var p in ProductCatalog.Products)
             {
-                // Arama filtresi uygulaması
+
                 if (!string.IsNullOrEmpty(searchFilter))
                 {
                     bool matchesName = p.Name.ToLower().Contains(searchFilter);
@@ -42,7 +42,7 @@ namespace ERP.UI
                         continue;
                 }
 
-                // Modern Ürün Satır Kartı
+
                 Guna2Panel card = new Guna2Panel();
                 card.Size = new Size(910, 80);
                 card.BorderColor = p.Stock > 0 ? Color.FromArgb(235, 235, 245) : Color.FromArgb(255, 205, 205);
@@ -52,7 +52,7 @@ namespace ERP.UI
                 card.Margin = new Padding(5, 5, 5, 8);
                 card.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
-                // Ürün Resmi
+
                 Guna2PictureBox pb = new Guna2PictureBox();
                 pb.Size = new Size(60, 60);
                 pb.Location = new Point(10, 10);
@@ -62,7 +62,7 @@ namespace ERP.UI
                 pb.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 card.Controls.Add(pb);
 
-                // Ürün Adı
+
                 Label lblName = new Label();
                 lblName.Text = p.Name;
                 lblName.Font = new Font("Segoe UI Semibold", 10.5f, FontStyle.Bold);
@@ -72,7 +72,7 @@ namespace ERP.UI
                 lblName.BackColor = Color.Transparent;
                 card.Controls.Add(lblName);
 
-                // Marka & Kategori
+
                 Label lblSub = new Label();
                 lblSub.Text = $"{p.Brand}  •  {p.Category}";
                 lblSub.Font = new Font("Segoe UI", 8.5f);
@@ -82,7 +82,7 @@ namespace ERP.UI
                 lblSub.BackColor = Color.Transparent;
                 card.Controls.Add(lblSub);
 
-                // Fiyat Rozeti (Tıklanamaz butondan)
+
                 Guna2Button btnPrice = new Guna2Button();
                 btnPrice.Text = p.Price.ToString("N2") + " TL";
                 btnPrice.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
@@ -97,7 +97,7 @@ namespace ERP.UI
                 btnPrice.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 card.Controls.Add(btnPrice);
 
-                // Stok Etiketi
+
                 Label lblStockTag = new Label();
                 lblStockTag.Text = "Stok:";
                 lblStockTag.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
@@ -107,7 +107,7 @@ namespace ERP.UI
                 lblStockTag.BackColor = Color.Transparent;
                 card.Controls.Add(lblStockTag);
 
-                // Durum Rozeti (İleride tanımlanacak metin kutusundan etkilenecek)
+
                 Guna2Button btnStatus = new Guna2Button();
                 btnStatus.Font = new Font("Segoe UI Semibold", 8f, FontStyle.Bold);
                 btnStatus.Size = new Size(115, 32);
@@ -115,7 +115,7 @@ namespace ERP.UI
                 btnStatus.Cursor = Cursors.Default;
                 btnStatus.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
-                // Stok Giriş Kutusu (Guna2TextBox)
+
                 Guna2TextBox txtStock = new Guna2TextBox();
                 txtStock.Text = p.Stock.ToString();
                 txtStock.Font = new Font("Segoe UI Semibold", 10f, FontStyle.Bold);
@@ -124,10 +124,10 @@ namespace ERP.UI
                 txtStock.TextAlign = HorizontalAlignment.Center;
                 txtStock.BorderRadius = 8;
                 txtStock.BorderColor = Color.FromArgb(200, 200, 220);
-                txtStock.Tag = p; // Kaydederken referans alabilmek için
+                txtStock.Tag = p;
                 txtStock.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
-                // Dinamik Rozet Güncelleme Yardımcı Metodu
+
                 Action UpdateStatusBadge = () =>
                 {
                     if (int.TryParse(txtStock.Text.Trim(), out int val) && val > 0)
@@ -148,10 +148,10 @@ namespace ERP.UI
                     }
                 };
 
-                // Başlangıç durumunu ayarla
+
                 UpdateStatusBadge();
 
-                // Değer her değiştiğinde anlık durum güncellemesi tetiklensin
+
                 txtStock.TextChanged += (senderText, eText) =>
                 {
                     UpdateStatusBadge();
@@ -263,7 +263,7 @@ namespace ERP.UI
             {
                 int saveCount = 0;
 
-                // FlowLayoutPanel içindeki her karttaki stok giriş kutularını bulalım
+
                 foreach (Control cardControl in flowLayoutProducts.Controls)
                 {
                     if (cardControl is Guna2Panel panel)
@@ -289,7 +289,7 @@ namespace ERP.UI
                 }
 
                 MessageBox.Show($"{saveCount} adet ürünün stok bilgisi başarıyla güncellendi!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadProducts(txtSearch.Text.Trim().ToLower()); // Görünümü tazele
+                LoadProducts(txtSearch.Text.Trim().ToLower());
             }
             catch (Exception ex)
             {

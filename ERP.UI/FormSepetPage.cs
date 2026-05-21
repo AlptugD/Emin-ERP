@@ -120,9 +120,9 @@ namespace ERP.UI
                 btnPlus.ForeColor = Color.FromArgb(60, 60, 60);
                 btnPlus.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
                 btnPlus.Cursor = Cursors.Hand;
-                btnPlus.Click += (s, ev) => 
-                { 
-                    bool isSuccess = CartManager.Add(item.Product); 
+                btnPlus.Click += (s, ev) =>
+                {
+                    bool isSuccess = CartManager.Add(item.Product);
                     if (!isSuccess)
                     {
                         MessageBox.Show($"Bu üründen stokta en fazla {item.Product.Stock} adet bulunmaktadır!", "Yetersiz Stok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -284,7 +284,7 @@ namespace ERP.UI
 
             try
             {
-                // Sipariş tamamlandığında stokları veritabanında otomatik düşür (Rubrik C3 Kriteri)
+
                 foreach (var item in CartManager.Items)
                 {
                     int newStock = Math.Max(0, item.Product.Stock - item.Quantity);

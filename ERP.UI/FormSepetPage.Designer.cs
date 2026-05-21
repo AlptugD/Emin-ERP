@@ -67,9 +67,9 @@ namespace ERP.UI
             pnlTableHeader.SuspendLayout();
             pnlHeader.SuspendLayout();
             SuspendLayout();
-            // 
-            // pnlMainContainer
-            // 
+
+
+
             pnlMainContainer.AutoScroll = true;
             pnlMainContainer.Controls.Add(pnlContent);
             pnlMainContainer.Controls.Add(pnlHeader);
@@ -80,9 +80,9 @@ namespace ERP.UI
             pnlMainContainer.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlMainContainer.Size = new Size(1370, 750);
             pnlMainContainer.TabIndex = 0;
-            // 
-            // pnlContent
-            // 
+
+
+
             pnlContent.Controls.Add(pnlFooter);
             pnlContent.Controls.Add(pnlSummary);
             pnlContent.Controls.Add(flowLayoutCartItems);
@@ -96,9 +96,9 @@ namespace ERP.UI
             pnlContent.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlContent.Size = new Size(1350, 1500);
             pnlContent.TabIndex = 1;
-            // 
-            // pnlFooter
-            // 
+
+
+
             pnlFooter.BackColor = Color.FromArgb(50, 55, 60);
             pnlFooter.Controls.Add(lblFooterCol1);
             pnlFooter.Controls.Add(lblFooterCol2);
@@ -116,45 +116,45 @@ namespace ERP.UI
             pnlFooter.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlFooter.Size = new Size(1350, 360);
             pnlFooter.TabIndex = 6;
-            // 
-            // lblFooterCol1
-            // 
+
+
+
             lblFooterCol1.ForeColor = Color.FromArgb(200, 200, 200);
             lblFooterCol1.Location = new Point(50, 70);
             lblFooterCol1.Name = "lblFooterCol1";
             lblFooterCol1.Size = new Size(200, 140);
             lblFooterCol1.TabIndex = 4;
             lblFooterCol1.Text = "Contact Us\r\nTrack Order\r\nReturns & Refunds\r\nFAQ's\r\nCareer";
-            // 
-            // lblFooterCol2
-            // 
+
+
+
             lblFooterCol2.ForeColor = Color.FromArgb(200, 200, 200);
             lblFooterCol2.Location = new Point(320, 70);
             lblFooterCol2.Name = "lblFooterCol2";
             lblFooterCol2.Size = new Size(200, 140);
             lblFooterCol2.TabIndex = 5;
             lblFooterCol2.Text = "About Us\r\neuphoria Blog\r\neuphoriastan\r\nCollaboration\r\nMedia";
-            // 
-            // lblFooterCol3
-            // 
+
+
+
             lblFooterCol3.ForeColor = Color.FromArgb(200, 200, 200);
             lblFooterCol3.Location = new Point(590, 70);
             lblFooterCol3.Name = "lblFooterCol3";
             lblFooterCol3.Size = new Size(200, 140);
             lblFooterCol3.TabIndex = 6;
             lblFooterCol3.Text = "Term and Conditions\r\nPrivacy Policy\r\nShipping Policy\r\nSitemap";
-            // 
-            // lblFooterCol4
-            // 
+
+
+
             lblFooterCol4.ForeColor = Color.FromArgb(200, 200, 200);
             lblFooterCol4.Location = new Point(860, 70);
             lblFooterCol4.Name = "lblFooterCol4";
             lblFooterCol4.Size = new Size(420, 140);
             lblFooterCol4.TabIndex = 7;
             lblFooterCol4.Text = "support@eminerp.com\r\nEklingpura Chouraha, Ahmedabad Main Road\r\n(NH 8- Near Mahadev Hotel) Udaipur, India - 313002";
-            // 
-            // lblFooterTitleCol1
-            // 
+
+
+
             lblFooterTitleCol1.AutoSize = true;
             lblFooterTitleCol1.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblFooterTitleCol1.ForeColor = Color.White;
@@ -163,9 +163,9 @@ namespace ERP.UI
             lblFooterTitleCol1.Size = new Size(95, 23);
             lblFooterTitleCol1.TabIndex = 0;
             lblFooterTitleCol1.Text = "Need Help";
-            // 
-            // lblFooterTitleCol2
-            // 
+
+
+
             lblFooterTitleCol2.AutoSize = true;
             lblFooterTitleCol2.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblFooterTitleCol2.ForeColor = Color.White;
@@ -174,9 +174,9 @@ namespace ERP.UI
             lblFooterTitleCol2.Size = new Size(84, 23);
             lblFooterTitleCol2.TabIndex = 1;
             lblFooterTitleCol2.Text = "Company";
-            // 
-            // lblFooterTitleCol3
-            // 
+
+
+
             lblFooterTitleCol3.AutoSize = true;
             lblFooterTitleCol3.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblFooterTitleCol3.ForeColor = Color.White;
@@ -185,9 +185,9 @@ namespace ERP.UI
             lblFooterTitleCol3.Size = new Size(85, 23);
             lblFooterTitleCol3.TabIndex = 2;
             lblFooterTitleCol3.Text = "More Info";
-            // 
-            // lblFooterTitleCol4
-            // 
+
+
+
             lblFooterTitleCol4.AutoSize = true;
             lblFooterTitleCol4.Font = new Font("Segoe UI Semibold", 10.5F, FontStyle.Bold);
             lblFooterTitleCol4.ForeColor = Color.White;
@@ -196,9 +196,9 @@ namespace ERP.UI
             lblFooterTitleCol4.Size = new Size(76, 23);
             lblFooterTitleCol4.TabIndex = 3;
             lblFooterTitleCol4.Text = "Location";
-            // 
-            // lblCopyright
-            // 
+
+
+
             lblCopyright.AutoSize = true;
             lblCopyright.ForeColor = Color.FromArgb(170, 170, 170);
             lblCopyright.Location = new Point(50, 310);
@@ -206,9 +206,9 @@ namespace ERP.UI
             lblCopyright.Size = new Size(393, 20);
             lblCopyright.TabIndex = 8;
             lblCopyright.Text = "Copyright © 2026 Euphoria Folks Pvt Ltd. All rights reserved.";
-            // 
-            // lblPopularCategories
-            // 
+
+
+
             lblPopularCategories.AutoSize = true;
             lblPopularCategories.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             lblPopularCategories.ForeColor = Color.White;
@@ -217,9 +217,9 @@ namespace ERP.UI
             lblPopularCategories.Size = new Size(182, 23);
             lblPopularCategories.TabIndex = 9;
             lblPopularCategories.Text = "Popular Categories   v";
-            // 
-            // pnlSummary
-            // 
+
+
+
             pnlSummary.BorderColor = Color.FromArgb(235, 235, 235);
             pnlSummary.BorderThickness = 1;
             pnlSummary.BorderRadius = 8;
@@ -237,9 +237,9 @@ namespace ERP.UI
             pnlSummary.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlSummary.Size = new Size(550, 260);
             pnlSummary.TabIndex = 5;
-            // 
-            // btnGoToCheckout
-            // 
+
+
+
             btnGoToCheckout.BackColor = Color.Transparent;
             btnGoToCheckout.BorderRadius = 10;
             btnGoToCheckout.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -258,9 +258,9 @@ namespace ERP.UI
             btnGoToCheckout.TabIndex = 6;
             btnGoToCheckout.Text = "Ödemeye Geç";
             btnGoToCheckout.Click += btnGoToCheckout_Click;
-            // 
-            // lblTotalValue
-            // 
+
+
+
             lblTotalValue.BackColor = Color.Transparent;
             lblTotalValue.Font = new Font("Segoe UI Bold", 11.5F, FontStyle.Bold);
             lblTotalValue.ForeColor = Color.FromArgb(40, 40, 40);
@@ -270,9 +270,9 @@ namespace ERP.UI
             lblTotalValue.TabIndex = 5;
             lblTotalValue.Text = "0,00 TL";
             lblTotalValue.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblShippingValue
-            // 
+
+
+
             lblShippingValue.BackColor = Color.Transparent;
             lblShippingValue.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             lblShippingValue.ForeColor = Color.FromArgb(80, 80, 80);
@@ -282,9 +282,9 @@ namespace ERP.UI
             lblShippingValue.TabIndex = 4;
             lblShippingValue.Text = "50,00 TL";
             lblShippingValue.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblSubtotalValue
-            // 
+
+
+
             lblSubtotalValue.BackColor = Color.Transparent;
             lblSubtotalValue.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             lblSubtotalValue.ForeColor = Color.FromArgb(80, 80, 80);
@@ -294,9 +294,9 @@ namespace ERP.UI
             lblSubtotalValue.TabIndex = 3;
             lblSubtotalValue.Text = "0,00 TL";
             lblSubtotalValue.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // lblTotalTitle
-            // 
+
+
+
             lblTotalTitle.AutoSize = true;
             lblTotalTitle.BackColor = Color.Transparent;
             lblTotalTitle.Font = new Font("Segoe UI Bold", 11.5F, FontStyle.Bold);
@@ -306,9 +306,9 @@ namespace ERP.UI
             lblTotalTitle.Size = new Size(142, 28);
             lblTotalTitle.TabIndex = 2;
             lblTotalTitle.Text = "Genel Toplam";
-            // 
-            // lblShippingTitle
-            // 
+
+
+
             lblShippingTitle.AutoSize = true;
             lblShippingTitle.BackColor = Color.Transparent;
             lblShippingTitle.Font = new Font("Segoe UI Semibold", 10F);
@@ -318,9 +318,9 @@ namespace ERP.UI
             lblShippingTitle.Size = new Size(55, 23);
             lblShippingTitle.TabIndex = 1;
             lblShippingTitle.Text = "Kargo";
-            // 
-            // lblSubtotalTitle
-            // 
+
+
+
             lblSubtotalTitle.AutoSize = true;
             lblSubtotalTitle.BackColor = Color.Transparent;
             lblSubtotalTitle.Font = new Font("Segoe UI Semibold", 10F);
@@ -330,16 +330,16 @@ namespace ERP.UI
             lblSubtotalTitle.Size = new Size(96, 23);
             lblSubtotalTitle.TabIndex = 0;
             lblSubtotalTitle.Text = "Ara Toplam";
-            // 
-            // flowLayoutCartItems
-            // 
+
+
+
             flowLayoutCartItems.Location = new Point(50, 185);
             flowLayoutCartItems.Name = "flowLayoutCartItems";
             flowLayoutCartItems.Size = new Size(1270, 320);
             flowLayoutCartItems.TabIndex = 4;
-            // 
-            // pnlTableHeader
-            // 
+
+
+
             pnlTableHeader.Controls.Add(lblColAction);
             pnlTableHeader.Controls.Add(lblColTotal);
             pnlTableHeader.Controls.Add(lblColShip);
@@ -353,9 +353,9 @@ namespace ERP.UI
             pnlTableHeader.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlTableHeader.Size = new Size(1270, 45);
             pnlTableHeader.TabIndex = 3;
-            // 
-            // lblColAction
-            // 
+
+
+
             lblColAction.AutoSize = true;
             lblColAction.BackColor = Color.Transparent;
             lblColAction.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -365,9 +365,9 @@ namespace ERP.UI
             lblColAction.Size = new Size(52, 20);
             lblColAction.TabIndex = 5;
             lblColAction.Text = "İŞLEM";
-            // 
-            // lblColTotal
-            // 
+
+
+
             lblColTotal.AutoSize = true;
             lblColTotal.BackColor = Color.Transparent;
             lblColTotal.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -377,9 +377,9 @@ namespace ERP.UI
             lblColTotal.Size = new Size(100, 20);
             lblColTotal.TabIndex = 4;
             lblColTotal.Text = "ARA TOPLAM";
-            // 
-            // lblColShip
-            // 
+
+
+
             lblColShip.AutoSize = true;
             lblColShip.BackColor = Color.Transparent;
             lblColShip.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -389,9 +389,9 @@ namespace ERP.UI
             lblColShip.Size = new Size(59, 20);
             lblColShip.TabIndex = 3;
             lblColShip.Text = "KARGO";
-            // 
-            // lblColQty
-            // 
+
+
+
             lblColQty.AutoSize = true;
             lblColQty.BackColor = Color.Transparent;
             lblColQty.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -401,9 +401,9 @@ namespace ERP.UI
             lblColQty.Size = new Size(46, 20);
             lblColQty.TabIndex = 2;
             lblColQty.Text = "ADET";
-            // 
-            // lblColPrice
-            // 
+
+
+
             lblColPrice.AutoSize = true;
             lblColPrice.BackColor = Color.Transparent;
             lblColPrice.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -413,9 +413,9 @@ namespace ERP.UI
             lblColPrice.Size = new Size(46, 20);
             lblColPrice.TabIndex = 1;
             lblColPrice.Text = "FİYAT";
-            // 
-            // lblColProd
-            // 
+
+
+
             lblColProd.AutoSize = true;
             lblColProd.BackColor = Color.Transparent;
             lblColProd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -426,9 +426,9 @@ namespace ERP.UI
             lblColProd.TabIndex = 0;
             lblColProd.Text = "ÜRÜN BİLGİLERİ";
 
-            // 
-            // lblBreadcrumbsSub
-            // 
+
+
+
             lblBreadcrumbsSub.AutoSize = true;
             lblBreadcrumbsSub.Font = new Font("Segoe UI", 8.5F);
             lblBreadcrumbsSub.ForeColor = Color.Gray;
@@ -437,9 +437,9 @@ namespace ERP.UI
             lblBreadcrumbsSub.Size = new Size(393, 20);
             lblBreadcrumbsSub.TabIndex = 1;
             lblBreadcrumbsSub.Text = "Siparişinizi tamamlamak için aşağıdaki bilgileri kontrol edin.";
-            // 
-            // lblBreadcrumbs
-            // 
+
+
+
             lblBreadcrumbs.AutoSize = true;
             lblBreadcrumbs.Font = new Font("Segoe UI Semibold", 9.5F, FontStyle.Bold);
             lblBreadcrumbs.ForeColor = Color.FromArgb(60, 60, 60);
@@ -448,9 +448,9 @@ namespace ERP.UI
             lblBreadcrumbs.Size = new Size(172, 21);
             lblBreadcrumbs.TabIndex = 0;
             lblBreadcrumbs.Text = "Ana Sayfa   >   Sepetim";
-            // 
-            // pnlHeader
-            // 
+
+
+
             pnlHeader.Controls.Add(btnCartHeader);
             pnlHeader.Controls.Add(btnUser);
             pnlHeader.Controls.Add(btnFav);
@@ -470,9 +470,9 @@ namespace ERP.UI
             pnlHeader.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pnlHeader.Size = new Size(1370, 75);
             pnlHeader.TabIndex = 0;
-            // 
-            // btnCartHeader
-            // 
+
+
+
             btnCartHeader.BackColor = Color.Transparent;
             btnCartHeader.BorderRadius = 8;
             btnCartHeader.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -490,9 +490,9 @@ namespace ERP.UI
             btnCartHeader.Size = new Size(50, 36);
             btnCartHeader.TabIndex = 10;
             btnCartHeader.Text = "🛒";
-            // 
-            // btnUser
-            // 
+
+
+
             btnUser.BackColor = Color.Transparent;
             btnUser.BorderRadius = 18;
             btnUser.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -510,9 +510,9 @@ namespace ERP.UI
             btnUser.Size = new Size(36, 36);
             btnUser.TabIndex = 9;
             btnUser.Text = "👤";
-            // 
-            // btnFav
-            // 
+
+
+
             btnFav.BackColor = Color.Transparent;
             btnFav.BorderRadius = 18;
             btnFav.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -530,9 +530,9 @@ namespace ERP.UI
             btnFav.Size = new Size(36, 36);
             btnFav.TabIndex = 8;
             btnFav.Text = "🤍";
-            // 
-            // txtSearch
-            // 
+
+
+
             txtSearch.BackColor = Color.Transparent;
             txtSearch.BorderRadius = 15;
             txtSearch.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -554,10 +554,10 @@ namespace ERP.UI
             txtSearch.ShadowDecoration.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtSearch.Size = new Size(250, 36);
             txtSearch.TabIndex = 7;
-            // 
-            // 
-            // lnkMenuAksesuar
-            // 
+
+
+
+
             lnkMenuAksesuar.BackColor = Color.Transparent;
             lnkMenuAksesuar.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lnkMenuAksesuar.DisabledState.BorderColor = Color.DarkGray;
@@ -575,9 +575,9 @@ namespace ERP.UI
             lnkMenuAksesuar.TabIndex = 6;
             lnkMenuAksesuar.Text = "Aksesuarlar";
             lnkMenuAksesuar.Click += lnkMenuHome_Click;
-            // 
-            // lnkMenuTelefon
-            // 
+
+
+
             lnkMenuTelefon.BackColor = Color.Transparent;
             lnkMenuTelefon.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lnkMenuTelefon.DisabledState.BorderColor = Color.DarkGray;
@@ -595,9 +595,9 @@ namespace ERP.UI
             lnkMenuTelefon.TabIndex = 5;
             lnkMenuTelefon.Text = "Telefon";
             lnkMenuTelefon.Click += lnkMenuHome_Click;
-            // 
-            // lnkMenuLaptop
-            // 
+
+
+
             lnkMenuLaptop.BackColor = Color.Transparent;
             lnkMenuLaptop.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lnkMenuLaptop.DisabledState.BorderColor = Color.DarkGray;
@@ -615,9 +615,9 @@ namespace ERP.UI
             lnkMenuLaptop.TabIndex = 4;
             lnkMenuLaptop.Text = "Laptop";
             lnkMenuLaptop.Click += lnkMenuHome_Click;
-            // 
-            // lnkMenuProducts
-            // 
+
+
+
             lnkMenuProducts.BackColor = Color.Transparent;
             lnkMenuProducts.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lnkMenuProducts.DisabledState.BorderColor = Color.DarkGray;
@@ -635,9 +635,9 @@ namespace ERP.UI
             lnkMenuProducts.TabIndex = 3;
             lnkMenuProducts.Text = "Ürünler";
             lnkMenuProducts.Click += lnkMenuHome_Click;
-            // 
-            // lnkMenuHome
-            // 
+
+
+
             lnkMenuHome.BackColor = Color.Transparent;
             lnkMenuHome.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lnkMenuHome.DisabledState.BorderColor = Color.DarkGray;
@@ -655,9 +655,9 @@ namespace ERP.UI
             lnkMenuHome.TabIndex = 2;
             lnkMenuHome.Text = "Ana Sayfa";
             lnkMenuHome.Click += lnkMenuHome_Click;
-            // 
-            // lblSubLogo
-            // 
+
+
+
             lblSubLogo.AutoSize = true;
             lblSubLogo.BackColor = Color.Transparent;
             lblSubLogo.Font = new Font("Segoe UI", 7.5F);
@@ -667,9 +667,9 @@ namespace ERP.UI
             lblSubLogo.Size = new Size(140, 17);
             lblSubLogo.TabIndex = 1;
             lblSubLogo.Text = "Ürünlerimiz emin ellerde";
-            // 
-            // lblLogo
-            // 
+
+
+
             lblLogo.AutoSize = true;
             lblLogo.BackColor = Color.Transparent;
             lblLogo.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
@@ -679,9 +679,9 @@ namespace ERP.UI
             lblLogo.Size = new Size(147, 37);
             lblLogo.TabIndex = 0;
             lblLogo.Text = "EMİN ERP";
-            // 
-            // FormSepetPage
-            // 
+
+
+
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
