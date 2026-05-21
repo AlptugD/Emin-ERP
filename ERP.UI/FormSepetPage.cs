@@ -15,7 +15,7 @@ namespace ERP.UI
             InitializeComponent();
             this.mainForm = mainForm;
             this.FormClosed += (s, ev) => Application.Exit();
-            
+
             CartManager.CartChanged += LoadCartItems;
         }
 
@@ -26,9 +26,8 @@ namespace ERP.UI
 
         private void LoadCartItems()
         {
-            // Clear current list
             flowLayoutCartItems.Controls.Clear();
-            
+
             double subtotal = 0;
             double shipping = CartManager.Items.Count > 0 ? 50.00 : 0.00;
 
@@ -37,7 +36,6 @@ namespace ERP.UI
                 double lineTotal = item.Product.Price * item.Quantity;
                 subtotal += lineTotal;
 
-                // Create a container panel for the row
                 Guna2Panel rowPanel = new Guna2Panel();
                 rowPanel.Size = new Size(1250, 100);
                 rowPanel.BorderColor = Color.FromArgb(235, 235, 235);
@@ -47,7 +45,6 @@ namespace ERP.UI
                 rowPanel.Margin = new Padding(0, 0, 0, 10);
                 rowPanel.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
-                // 1. Product Image
                 Guna2PictureBox pb = new Guna2PictureBox();
                 pb.Size = new Size(70, 70);
                 pb.Location = new Point(15, 15);
@@ -57,7 +54,6 @@ namespace ERP.UI
                 pb.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 rowPanel.Controls.Add(pb);
 
-                // 2. Product Name and Variant
                 Label lblName = new Label();
                 lblName.Text = item.Product.Name;
                 lblName.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
@@ -67,14 +63,13 @@ namespace ERP.UI
                 rowPanel.Controls.Add(lblName);
 
                 Label lblVariant = new Label();
-                lblVariant.Text = "Renk: Standart"; // Default variant
+                lblVariant.Text = "Renk: Standart";
                 lblVariant.Font = new Font("Segoe UI", 8.5f);
                 lblVariant.Location = new Point(100, 50);
                 lblVariant.Size = new Size(350, 20);
                 lblVariant.ForeColor = Color.DarkGray;
                 rowPanel.Controls.Add(lblVariant);
 
-                // 3. Price
                 Label lblPrice = new Label();
                 lblPrice.Text = $"{item.Product.Price:N2} TL";
                 lblPrice.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
@@ -83,7 +78,6 @@ namespace ERP.UI
                 lblPrice.ForeColor = Color.FromArgb(50, 50, 50);
                 rowPanel.Controls.Add(lblPrice);
 
-                // 4. Quantity Selector Panel
                 Guna2Panel pnlQty = new Guna2Panel();
                 pnlQty.Size = new Size(95, 30);
                 pnlQty.Location = new Point(660, 35);
@@ -103,9 +97,7 @@ namespace ERP.UI
                 btnMinus.ForeColor = Color.FromArgb(60, 60, 60);
                 btnMinus.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
                 btnMinus.Cursor = Cursors.Hand;
-                btnMinus.Click += (s, ev) => {
-                    CartManager.Remove(item.Product);
-                };
+                btnMinus.Click += (s, ev) => { CartManager.Remove(item.Product); };
                 pnlQty.Controls.Add(btnMinus);
 
                 Label lblQty = new Label();
@@ -127,8 +119,13 @@ namespace ERP.UI
                 btnPlus.ForeColor = Color.FromArgb(60, 60, 60);
                 btnPlus.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
                 btnPlus.Cursor = Cursors.Hand;
-                btnPlus.Click += (s, ev) => {
-                    CartManager.Add(item.Product);
+                btnPlus.Click += (s, ev) => 
+                { 
+                    bool isSuccess = CartManager.Add(item.Product); 
+                    if (!isSuccess)
+                    {
+                        MessageBox.Show($"Bu üründen stokta en fazla {item.Product.Stock} adet bulunmaktadır!", "Yetersiz Stok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 };
                 pnlQty.Controls.Add(btnPlus);
 
@@ -138,7 +135,6 @@ namespace ERP.UI
 
                 rowPanel.Controls.Add(pnlQty);
 
-                // 5. Shipping
                 Label lblShip = new Label();
                 lblShip.Text = "Ücretsiz Kargo";
                 lblShip.Font = new Font("Segoe UI", 9.5f);
@@ -147,7 +143,6 @@ namespace ERP.UI
                 lblShip.ForeColor = Color.Gray;
                 rowPanel.Controls.Add(lblShip);
 
-                // 6. Subtotal
                 Label lblLineTotal = new Label();
                 lblLineTotal.Text = $"{lineTotal:N2} TL";
                 lblLineTotal.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
@@ -156,7 +151,6 @@ namespace ERP.UI
                 lblLineTotal.ForeColor = Color.FromArgb(50, 50, 50);
                 rowPanel.Controls.Add(lblLineTotal);
 
-                // 7. Delete action button (trash bin)
                 Guna2Button btnDelete = new Guna2Button();
                 btnDelete.Text = "🗑";
                 btnDelete.Font = new Font("Segoe UI", 11.5f);
@@ -167,8 +161,8 @@ namespace ERP.UI
                 btnDelete.Location = new Point(1190, 32);
                 btnDelete.Cursor = Cursors.Hand;
                 btnDelete.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-                btnDelete.Click += (s, ev) => {
-                    // Fully remove product from cart
+                btnDelete.Click += (s, ev) =>
+                {
                     CartManager.Items.Remove(item);
                     CartManager.TriggerChanged();
                 };
@@ -177,29 +171,68 @@ namespace ERP.UI
                 flowLayoutCartItems.Controls.Add(rowPanel);
             }
 
-            // Adjust heights of controls to prevent inner scroll clipping and enable main page scroll
             int itemCount = CartManager.Items.Count;
             flowLayoutCartItems.Height = Math.Max(120, itemCount * 110 + 10);
-            
-            // Adjust coordinates of summary, footer panels
+
             pnlSummary.Location = new Point(770, flowLayoutCartItems.Bottom + 20);
+
+            double discountAmount = 0;
+            if (subtotal > 15000)
+            {
+                discountAmount = Math.Round(subtotal * 0.10, 2);
+
+                var oldBanner = pnlContent.Controls["pnlDiscountBanner"];
+                if (oldBanner != null)
+                    pnlContent.Controls.Remove(oldBanner);
+
+                Guna2Panel pnlDiscountBanner = new Guna2Panel();
+                pnlDiscountBanner.Name = "pnlDiscountBanner";
+                pnlDiscountBanner.FillColor = Color.FromArgb(255, 248, 225);
+                pnlDiscountBanner.BorderColor = Color.FromArgb(255, 193, 7);
+                pnlDiscountBanner.BorderThickness = 2;
+                pnlDiscountBanner.BorderRadius = 12;
+                pnlDiscountBanner.Size = new Size(420, 64);
+                pnlDiscountBanner.Location = new Point(pnlSummary.Left, pnlSummary.Top - 80);
+                pnlDiscountBanner.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+
+                Label lblDiscountIcon = new Label();
+                lblDiscountIcon.Text = "🎉";
+                lblDiscountIcon.Font = new Font("Segoe UI", 18f);
+                lblDiscountIcon.Location = new Point(10, 10);
+                lblDiscountIcon.Size = new Size(36, 36);
+                lblDiscountIcon.TextAlign = ContentAlignment.MiddleCenter;
+                pnlDiscountBanner.Controls.Add(lblDiscountIcon);
+
+                Label lblDiscountText = new Label();
+                lblDiscountText.Text = $"%10 İndirim Uygulandı!\n-{discountAmount:N2} TL tasarruf ettiniz.";
+                lblDiscountText.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
+                lblDiscountText.ForeColor = Color.FromArgb(133, 97, 0);
+                lblDiscountText.Location = new Point(54, 8);
+                lblDiscountText.Size = new Size(358, 48);
+                pnlDiscountBanner.Controls.Add(lblDiscountText);
+
+                pnlContent.Controls.Add(pnlDiscountBanner);
+                pnlDiscountBanner.BringToFront();
+            }
+            else
+            {
+                var oldBanner = pnlContent.Controls["pnlDiscountBanner"];
+                if (oldBanner != null)
+                    pnlContent.Controls.Remove(oldBanner);
+            }
+
+            double total = subtotal + shipping - discountAmount;
+
             pnlFooter.Location = new Point(0, pnlSummary.Bottom + 50);
-            
-            // Set the content height dynamically so the parent auto-scroll panel works correctly
             pnlContent.Height = pnlFooter.Bottom;
 
-            // Calculations
-            double total = subtotal + shipping;
             lblSubtotalValue.Text = $"{subtotal:N2} TL";
             lblShippingValue.Text = $"{shipping:N2} TL";
             lblTotalValue.Text = $"{total:N2} TL";
 
-            // Badge count in Header
             int totalQty = 0;
             foreach (var item in CartManager.Items)
-            {
                 totalQty += item.Quantity;
-            }
             btnCartHeader.Text = totalQty > 0 ? $"🛒 ({totalQty})" : "🛒";
 
             if (itemCount == 0)
@@ -216,7 +249,6 @@ namespace ERP.UI
 
         private Image GetProductImage(string fileName, string productName, Color primaryColor)
         {
-            // Same helper method as FormAnaMenu to draw nice vector images
             string path1 = Path.Combine(Application.StartupPath, "Resources", fileName);
             if (File.Exists(path1))
             {
@@ -234,13 +266,9 @@ namespace ERP.UI
                 g.Clear(Color.White);
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 using (Brush bgBrush = new SolidBrush(primaryColor))
-                {
                     g.FillEllipse(bgBrush, 5, 5, 60, 60);
-                }
                 using (Pen p = new Pen(Color.White, 3))
-                {
                     g.DrawEllipse(p, 5, 5, 60, 60);
-                }
             }
             return bmp;
         }

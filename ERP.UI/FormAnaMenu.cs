@@ -12,96 +12,50 @@ namespace ERP.UI
         private List<ProductItem> products = new List<ProductItem>();
         private string activeCategory = "Tümü";
         private List<Guna2Button> categoryButtons = new List<Guna2Button>();
+        public bool ExitOnClose { get; set; } = true;
 
         public FormAnaMenu()
         {
             InitializeComponent();
-            this.FormClosed += (s, ev) => Application.Exit();
+            this.FormClosed += (s, ev) => { if (ExitOnClose) Application.Exit(); };
             btnCart.Click += btnCart_Click;
             CartManager.CartChanged += UpdateCartBadge;
         }
 
         private void FormAnaMenu_Load(object sender, EventArgs e)
         {
-            InitializeProducts();
+            products = ProductCatalog.Products;
             CreateCategoryButtons();
             RenderProducts();
             UpdateCartBadge();
-            
-            // Set initial trackbar values to match text fields
+
             if (tbPrice != null)
-            {
                 tbPrice.Value = 15000;
+
+            if (AppSession.IsAdmin)
+            {
+                Guna2Button btnAdminPanel = new Guna2Button();
+                btnAdminPanel.Text = "🔧 Admin Paneli";
+                btnAdminPanel.Font = new Font("Segoe UI Semibold", 9f, FontStyle.Bold);
+                btnAdminPanel.FillColor = Color.FromArgb(22, 22, 40);
+                btnAdminPanel.ForeColor = Color.White;
+                btnAdminPanel.BorderRadius = 8;
+                btnAdminPanel.Size = new Size(148, 32);
+                btnAdminPanel.Location = new Point(this.ClientSize.Width - 168, 10);
+                btnAdminPanel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+                btnAdminPanel.Cursor = Cursors.Hand;
+                btnAdminPanel.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                btnAdminPanel.Click += (s, ev) =>
+                {
+                    FormAdminStok adminForm = new FormAdminStok();
+                    adminForm.FormClosed -= null;
+                    adminForm.FormClosed += (sa, eva) => Application.Exit();
+                    adminForm.Show();
+                    this.Hide();
+                };
+                this.Controls.Add(btnAdminPanel);
+                btnAdminPanel.BringToFront();
             }
-        }
-
-        private void InitializeProducts()
-        {
-            // Card 1: Mavi Premium Kablosuz Kulaklık
-            products.Add(new ProductItem
-            {
-                Name = "Mavi Premium Kablosuz Kulaklık",
-                Brand = "ProCompute",
-                Price = 3499.00,
-                Category = "Kablosuz Kulaklıklar",
-                ImageFileName = "blue_headphones.png",
-                PrimaryColor = Color.FromArgb(94, 145, 196)
-            });
-
-            // Card 2: Taşınabilir Oyun Konsolu
-            products.Add(new ProductItem
-            {
-                Name = "Taşınabilir Oyun Konsolu",
-                Brand = "PlayAnywhere",
-                Price = 12999.00,
-                Category = "Masaüstü Bilgisayarlar",
-                ImageFileName = "white_controller.png",
-                PrimaryColor = Color.FromArgb(220, 224, 230)
-            });
-
-            // Card 3: Çiçek Desenli Tablet Kılıfı
-            products.Add(new ProductItem
-            {
-                Name = "Çiçek Desenli Tablet Kılıfı",
-                Brand = "SkinArt",
-                Price = 699.00,
-                Category = "Kılıflar & Ekran Koruyucular",
-                ImageFileName = "tablet_case.png",
-                PrimaryColor = Color.FromArgb(240, 215, 215)
-            });
-
-            // Card 4: Lavanta Rengi Kablosuz Kulaklık
-            products.Add(new ProductItem
-            {
-                Name = "Lavanta Rengi Kablosuz Kulaklık",
-                Brand = "SonicWave",
-                Price = 1999.00,
-                Category = "Kablosuz Kulaklıklar",
-                ImageFileName = "lavender_headphones.png",
-                PrimaryColor = Color.FromArgb(215, 200, 235)
-            });
-
-            // Card 5: White Graphic Crop Top
-            products.Add(new ProductItem
-            {
-                Name = "White Graphic Crop Top",
-                Brand = "woden's Brand",
-                Price = 449.00,
-                Category = "Telefon Aksesuarları",
-                ImageFileName = "white_crop_top.png",
-                PrimaryColor = Color.FromArgb(235, 230, 240)
-            });
-
-            // Card 6: Black Shorts
-            products.Add(new ProductItem
-            {
-                Name = "Black Shorts",
-                Brand = "MM's Brand",
-                Price = 549.00,
-                Category = "Dizüstü Bilgisayarlar",
-                ImageFileName = "black_shorts.png",
-                PrimaryColor = Color.FromArgb(230, 230, 230)
-            });
         }
 
         private void CreateCategoryButtons()
@@ -122,7 +76,6 @@ namespace ERP.UI
 
             foreach (string cat in categories)
             {
-                // We create a Guna2Button for category selection
                 Guna2Button btn = new Guna2Button();
                 btn.Text = cat;
                 btn.TextAlign = HorizontalAlignment.Left;
@@ -133,12 +86,9 @@ namespace ERP.UI
                 btn.Location = new Point(0, startY);
                 btn.Cursor = Cursors.Hand;
                 btn.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-                
-                // Active/Inactive state configuration
                 btn.HoverState.ForeColor = Color.FromArgb(142, 68, 173);
                 btn.HoverState.FillColor = Color.FromArgb(250, 245, 255);
-                
-                // Add right aligned arrow label inside the button to match the mockup
+
                 Label lblArrow = new Label();
                 lblArrow.Text = ">";
                 lblArrow.ForeColor = Color.FromArgb(180, 180, 180);
@@ -149,15 +99,9 @@ namespace ERP.UI
                 lblArrow.Cursor = Cursors.Hand;
                 btn.Controls.Add(lblArrow);
 
-                btn.Click += (s, ev) => {
-                    if (activeCategory == cat)
-                    {
-                        activeCategory = "Tümü"; // Toggle off
-                    }
-                    else
-                    {
-                        activeCategory = cat;
-                    }
+                btn.Click += (s, ev) =>
+                {
+                    activeCategory = (activeCategory == cat) ? "Tümü" : cat;
                     UpdateCategoryButtonStyles();
                     ApplyFilters();
                 };
@@ -192,7 +136,9 @@ namespace ERP.UI
 
             foreach (var item in products)
             {
-                // Create Card Panel
+                if (!AppSession.IsAdmin && item.Stock <= 0)
+                    continue;
+
                 Guna2Panel card = new Guna2Panel();
                 card.Size = new Size(310, 360);
                 card.BorderColor = Color.FromArgb(242, 242, 242);
@@ -202,7 +148,6 @@ namespace ERP.UI
                 card.Margin = new Padding(10);
                 card.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
 
-                // Image PictureBox
                 Guna2PictureBox pb = new Guna2PictureBox();
                 pb.Size = new Size(290, 230);
                 pb.Location = new Point(10, 10);
@@ -212,7 +157,6 @@ namespace ERP.UI
                 pb.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 card.Controls.Add(pb);
 
-                // Heart / Favorite Button
                 Guna2Button btnFav = new Guna2Button();
                 btnFav.Size = new Size(36, 36);
                 btnFav.Location = new Point(250, 20);
@@ -227,16 +171,16 @@ namespace ERP.UI
                 btnFav.ShadowDecoration.Depth = 10;
                 btnFav.ShadowDecoration.BorderRadius = 18;
                 btnFav.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-                
+
                 bool isFav = false;
-                btnFav.Click += (s, ev) => {
+                btnFav.Click += (s, ev) =>
+                {
                     isFav = !isFav;
                     btnFav.Text = isFav ? "❤️" : "🤍";
                     btnFav.ForeColor = isFav ? Color.Red : Color.FromArgb(120, 120, 120);
                 };
                 card.Controls.Add(btnFav);
 
-                // Product Title
                 Label lblTitle = new Label();
                 lblTitle.Text = item.Name;
                 lblTitle.Font = new Font("Segoe UI Semibold", 10.0f, FontStyle.Bold);
@@ -245,7 +189,6 @@ namespace ERP.UI
                 lblTitle.ForeColor = Color.FromArgb(40, 40, 40);
                 card.Controls.Add(lblTitle);
 
-                // Seller / Brand
                 Label lblBrand = new Label();
                 lblBrand.Text = item.Brand;
                 lblBrand.Font = new Font("Segoe UI Semibold", 8.5f, FontStyle.Regular);
@@ -254,7 +197,6 @@ namespace ERP.UI
                 lblBrand.ForeColor = Color.FromArgb(160, 160, 160);
                 card.Controls.Add(lblBrand);
 
-                // Price Tag (Pill shape)
                 Guna2Button btnPrice = new Guna2Button();
                 btnPrice.Text = item.Price.ToString("N2") + " TL";
                 btnPrice.Font = new Font("Segoe UI Semibold", 9.0f, FontStyle.Bold);
@@ -266,40 +208,59 @@ namespace ERP.UI
                 btnPrice.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
                 card.Controls.Add(btnPrice);
 
-                // Add to Cart Button (styled to match design)
-                Guna2Button btnAddToCart = new Guna2Button();
-                btnAddToCart.Text = "+ Ekle";
-                btnAddToCart.Font = new Font("Segoe UI Semibold", 8.5f, FontStyle.Bold);
-                btnAddToCart.FillColor = Color.FromArgb(33, 150, 243);
-                btnAddToCart.ForeColor = Color.White;
-                btnAddToCart.BorderRadius = 10;
-                btnAddToCart.Size = new Size(95, 28);
-                btnAddToCart.Location = new Point(200, 320);
-                btnAddToCart.Cursor = Cursors.Hand;
-                btnAddToCart.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-                btnAddToCart.Click += (s, ev) => {
-                    CartManager.Add(item);
-                    
-                    // Visual feedback
-                    string originalText = btnAddToCart.Text;
-                    Color originalColor = btnAddToCart.FillColor;
-                    
-                    btnAddToCart.Text = "✓ Eklendi";
-                    btnAddToCart.FillColor = Color.FromArgb(46, 204, 113); // Soft green color
-                    btnAddToCart.Enabled = false;
-                    
-                    System.Windows.Forms.Timer resetTimer = new System.Windows.Forms.Timer();
-                    resetTimer.Interval = 1200;
-                    resetTimer.Tick += (senderTimer, eTimer) => {
-                        btnAddToCart.Text = originalText;
-                        btnAddToCart.FillColor = originalColor;
-                        btnAddToCart.Enabled = true;
-                        resetTimer.Stop();
-                        resetTimer.Dispose();
+                if (AppSession.IsAdmin)
+                {
+                    Label lblStock = new Label();
+                    lblStock.Text = $"Stok: {item.Stock}";
+                    lblStock.Font = new Font("Segoe UI Semibold", 8f, FontStyle.Bold);
+                    lblStock.Location = new Point(15, 324);
+                    lblStock.Size = new Size(80, 20);
+                    lblStock.ForeColor = item.Stock > 0 ? Color.FromArgb(28, 160, 105) : Color.FromArgb(200, 50, 50);
+                    card.Controls.Add(lblStock);
+                }
+                else
+                {
+                    Guna2Button btnAddToCart = new Guna2Button();
+                    btnAddToCart.Text = "+ Ekle";
+                    btnAddToCart.Font = new Font("Segoe UI Semibold", 8.5f, FontStyle.Bold);
+                    btnAddToCart.FillColor = Color.FromArgb(33, 150, 243);
+                    btnAddToCart.ForeColor = Color.White;
+                    btnAddToCart.BorderRadius = 10;
+                    btnAddToCart.Size = new Size(95, 28);
+                    btnAddToCart.Location = new Point(200, 320);
+                    btnAddToCart.Cursor = Cursors.Hand;
+                    btnAddToCart.CustomizableEdges = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+                    btnAddToCart.Click += (s, ev) =>
+                    {
+                        bool isSuccess = CartManager.Add(item);
+
+                        if (!isSuccess)
+                        {
+                            MessageBox.Show($"Bu üründen stokta en fazla {item.Stock} adet bulunmaktadır!", "Yetersiz Stok", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+                        string originalText = btnAddToCart.Text;
+                        Color originalColor = btnAddToCart.FillColor;
+
+                        btnAddToCart.Text = "✓ Eklendi";
+                        btnAddToCart.FillColor = Color.FromArgb(46, 204, 113);
+                        btnAddToCart.Enabled = false;
+
+                        System.Windows.Forms.Timer resetTimer = new System.Windows.Forms.Timer();
+                        resetTimer.Interval = 1200;
+                        resetTimer.Tick += (senderTimer, eTimer) =>
+                        {
+                            btnAddToCart.Text = originalText;
+                            btnAddToCart.FillColor = originalColor;
+                            btnAddToCart.Enabled = true;
+                            resetTimer.Stop();
+                            resetTimer.Dispose();
+                        };
+                        resetTimer.Start();
                     };
-                    resetTimer.Start();
-                };
-                card.Controls.Add(btnAddToCart);
+                    card.Controls.Add(btnAddToCart);
+                }
 
                 flowLayoutProducts.Controls.Add(card);
                 item.CardPanel = card;
@@ -308,28 +269,24 @@ namespace ERP.UI
 
         private Image GetProductImage(string fileName, string productName, Color primaryColor)
         {
-            // Look in output path
             string path1 = Path.Combine(Application.StartupPath, "Resources", fileName);
             if (File.Exists(path1))
             {
                 try { return Image.FromFile(path1); } catch { }
             }
 
-            // Look in source path
             string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "..", "Resources", fileName);
             if (File.Exists(path2))
             {
                 try { return Image.FromFile(path2); } catch { }
             }
 
-            // High quality custom vector fallback using Graphics
             Bitmap bmp = new Bitmap(290, 230);
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.Clear(Color.White);
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
-                // Soft background container with rounded corners
                 using (var path = new System.Drawing.Drawing2D.GraphicsPath())
                 {
                     int radius = 16;
@@ -340,19 +297,13 @@ namespace ERP.UI
                     path.AddArc(rect.X, rect.Bottom - radius, radius, radius, 90, 90);
                     path.CloseFigure();
                     using (Brush bgBrush = new SolidBrush(primaryColor))
-                    {
                         g.FillPath(bgBrush, path);
-                    }
                 }
 
-                // Render vector mockups resembling the images
                 if (productName.Contains("Kulaklık"))
                 {
-                    // Draw clean modern headphones
                     using (Pen p = new Pen(Color.FromArgb(50, 0, 0, 0), 10))
-                    {
                         g.DrawArc(p, 85, 60, 120, 120, 180, 180);
-                    }
                     using (Brush b = new SolidBrush(Color.FromArgb(200, 255, 255, 255)))
                     {
                         g.FillEllipse(b, 75, 110, 30, 50);
@@ -361,7 +312,6 @@ namespace ERP.UI
                 }
                 else if (productName.Contains("Konsol") || productName.Contains("Kolu"))
                 {
-                    // Draw white modern controller
                     using (Brush b = new SolidBrush(Color.White))
                     {
                         g.FillEllipse(b, 80, 90, 65, 65);
@@ -370,23 +320,16 @@ namespace ERP.UI
                     }
                     using (Brush b = new SolidBrush(Color.FromArgb(142, 68, 173)))
                     {
-                        // Joysticks
                         g.FillEllipse(b, 110, 115, 18, 18);
                         g.FillEllipse(b, 160, 115, 18, 18);
                     }
                 }
                 else if (productName.Contains("Kılıf"))
                 {
-                    // Draw tablet case mockup
                     using (Brush b = new SolidBrush(Color.FromArgb(250, 250, 250)))
-                    {
                         g.FillRectangle(b, 90, 50, 110, 140);
-                    }
                     using (Pen p = new Pen(Color.FromArgb(142, 68, 173), 3))
-                    {
                         g.DrawRectangle(p, 90, 50, 110, 140);
-                    }
-                    // Decorative waves/flowers in case
                     using (Pen p = new Pen(Color.Coral, 2))
                     {
                         g.DrawArc(p, 100, 70, 30, 30, 0, 180);
@@ -395,26 +338,22 @@ namespace ERP.UI
                 }
                 else if (productName.Contains("Crop") || productName.Contains("Telefon"))
                 {
-                    // Draw clean crop top mockup
                     using (Brush b = new SolidBrush(Color.White))
                     {
-                        g.FillRectangle(b, 100, 70, 90, 70); // Torso
-                        g.FillRectangle(b, 75, 70, 25, 30); // Left sleeve
-                        g.FillRectangle(b, 190, 70, 25, 30); // Right sleeve
+                        g.FillRectangle(b, 100, 70, 90, 70);
+                        g.FillRectangle(b, 75, 70, 25, 30);
+                        g.FillRectangle(b, 190, 70, 25, 30);
                     }
                     using (Pen p = new Pen(Color.FromArgb(142, 68, 173), 3))
-                    {
-                        g.DrawLine(p, 100, 140, 190, 140); // Bottom waist line
-                    }
+                        g.DrawLine(p, 100, 140, 190, 140);
                 }
                 else if (productName.Contains("Shorts") || productName.Contains("Bilgisayar"))
                 {
-                    // Draw black shorts mockup
                     using (Brush b = new SolidBrush(Color.FromArgb(40, 40, 40)))
                     {
-                        g.FillRectangle(b, 95, 75, 100, 35); // waist
-                        g.FillRectangle(b, 95, 110, 45, 60); // left leg
-                        g.FillRectangle(b, 150, 110, 45, 60); // right leg
+                        g.FillRectangle(b, 95, 75, 100, 35);
+                        g.FillRectangle(b, 95, 110, 45, 60);
+                        g.FillRectangle(b, 150, 110, 45, 60);
                     }
                 }
             }
@@ -433,14 +372,13 @@ namespace ERP.UI
             {
                 bool matchesCategory = (activeCategory == "Tümü" || item.Category == activeCategory);
                 bool matchesPrice = (item.Price >= min && item.Price <= max);
-                bool matchesSearch = string.IsNullOrEmpty(search) || 
-                                     item.Name.ToLower().Contains(search) || 
+                bool matchesSearch = string.IsNullOrEmpty(search) ||
+                                     item.Name.ToLower().Contains(search) ||
                                      item.Brand.ToLower().Contains(search);
+                bool matchesStock = AppSession.IsAdmin || item.Stock > 0;
 
                 if (item.CardPanel != null)
-                {
-                    item.CardPanel.Visible = matchesCategory && matchesPrice && matchesSearch;
-                }
+                    item.CardPanel.Visible = matchesCategory && matchesPrice && matchesSearch && matchesStock;
             }
         }
 
@@ -454,30 +392,22 @@ namespace ERP.UI
             ApplyFilters();
         }
 
-        // Value changes on slider updates txtMaxPrice
         private void tbPrice_ValueChanged(object sender, EventArgs e)
         {
             if (tbPrice != null && txtMaxPrice != null)
-            {
                 txtMaxPrice.Text = tbPrice.Value.ToString();
-            }
         }
 
-        // Text changes on min textbox updates layout filters
         private void txtMinPrice_TextChanged(object sender, EventArgs e)
         {
-            // Do not sync with trackbar since it represents the Max limit
         }
 
-        // Text changes on max textbox updates slider value
         private void txtMaxPrice_TextChanged(object sender, EventArgs e)
         {
             if (tbPrice != null && txtMaxPrice != null && int.TryParse(txtMaxPrice.Text, out int val))
             {
                 if (val >= tbPrice.Minimum && val <= tbPrice.Maximum)
-                {
                     tbPrice.Value = val;
-                }
             }
         }
 
@@ -488,13 +418,11 @@ namespace ERP.UI
                                      "Günümüzde teknoloji, hayatımızın her alanında her zamankinden daha fazla yer kaplıyor. Artık yavaş ve kullanışsız cihazlarla vakit kaybettiğimiz günler geride kaldı. Bugün, hayatı kolaylaştıran akıllı donanımlar ve ergonomik tasarımlar, verimliliği ve konforu zirveye taşıyor. Bu doğrultuda Emin Ticaret, sizi işinizde, oyununuzda ve günlük yaşantınızda her zaman kazanan yapacak geniş bir premium teknoloji yelpazesine sahip.\n\n" +
                                      "Teknoloji koleksiyonumuz, dijital yaşam tarzınızda ikonik bir kalite standardı belirlemenizi sağlayacak. Şunu açıkça söyleyebiliriz ki; her zaman aradığınız o üstün donanım gücünü ve şık tasarımı bir arada sunan güvenilir teknoloji mağazalarının sayısı oldukça azdır. Emin ERP olarak biz, ürün yönetimini ve tedariğini sizler için en kolay ve şeffaf hale getirmek için buradayız.";
 
-            // Expand heights to fit the full text
             lblSeoDescription.Height = 320;
             pnlSeoSection.Height = 450;
             pnlContent.Height = 1580;
             btnDahaFazlaGor.Visible = false;
-            
-            // Force container layout updates
+
             pnlContent.PerformLayout();
             pnlMainContainer.PerformLayout();
         }
@@ -503,9 +431,7 @@ namespace ERP.UI
         {
             int count = 0;
             foreach (var item in CartManager.Items)
-            {
                 count += item.Quantity;
-            }
             btnCart.Text = count > 0 ? $"Sepet ({count})" : "Sepet";
         }
 
@@ -526,5 +452,6 @@ namespace ERP.UI
         public string ImageFileName { get; set; } = string.Empty;
         public Color PrimaryColor { get; set; }
         public Guna2Panel? CardPanel { get; set; }
+        public int Stock { get; set; } = 10;
     }
 }

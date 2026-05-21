@@ -3,7 +3,7 @@ using ERP.Entities;
 using System;
 using System.Windows.Forms;
 
-namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyla birebir aynı olmalı.
+namespace ERP.UI
 {
     public partial class FormGiris : Form
     {
@@ -29,10 +29,22 @@ namespace ERP.UI  // <--- BURAYA ÇOK DİKKAT ET! Projenin sağ taraftaki adıyl
 
                 if (isSuccess)
                 {
+                    AppSession.IsAdmin = txtKullaniciAdi.Text.Trim().ToLower() == "admin";
+                    AppSession.CurrentUsername = txtKullaniciAdi.Text.Trim();
+
                     MessageBox.Show("Giriş Başarılı!", "Bilgi");
                     this.Hide();
-                    FormAnaMenu anaMenu = new FormAnaMenu();
-                    anaMenu.Show();
+
+                    if (AppSession.IsAdmin)
+                    {
+                        FormAdminStok adminForm = new FormAdminStok();
+                        adminForm.Show();
+                    }
+                    else
+                    {
+                        FormAnaMenu anaMenu = new FormAnaMenu();
+                        anaMenu.Show();
+                    }
                 }
                 else
                 {

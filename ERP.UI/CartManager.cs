@@ -8,18 +8,27 @@ namespace ERP.UI
         public static List<CartItem> Items { get; } = new List<CartItem>();
         public static event Action? CartChanged;
 
-        public static void Add(ProductItem product)
+        public static bool Add(ProductItem product)
         {
             var existing = Items.Find(i => i.Product.Name == product.Name);
             if (existing != null)
             {
+                if (existing.Quantity >= product.Stock)
+                {
+                    return false;
+                }
                 existing.Quantity++;
             }
             else
             {
+                if (product.Stock <= 0)
+                {
+                    return false;
+                }
                 Items.Add(new CartItem { Product = product, Quantity = 1 });
             }
             CartChanged?.Invoke();
+            return true;
         }
 
         public static void Remove(ProductItem product)
