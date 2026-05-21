@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ERP.Entities;
 
 namespace ERP.UI
 {

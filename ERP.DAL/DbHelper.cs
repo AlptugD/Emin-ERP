@@ -54,6 +54,46 @@ namespace ERP.DAL
                         SqlCommand createTableCmd = new SqlCommand(createTableSql, conn);
                         createTableCmd.ExecuteNonQuery();
                     }
+
+                    // Products tablosunu sorgula ve oluştur (Rubrik B1 Kriteri)
+                    SqlCommand checkProductsTableCmd = new SqlCommand("SELECT OBJECT_ID(N'EminERP_DB.dbo.Products', N'U')", conn);
+                    var productsTableId = checkProductsTableCmd.ExecuteScalar();
+                    if (productsTableId == null || productsTableId == DBNull.Value)
+                    {
+                        string createProductsTableSql = @"
+                            CREATE TABLE Products (
+                                Id INT PRIMARY KEY IDENTITY(1,1),
+                                Name NVARCHAR(150) UNIQUE NOT NULL,
+                                Brand NVARCHAR(100) NOT NULL,
+                                Price DECIMAL(18,2) NOT NULL,
+                                Category NVARCHAR(100) NOT NULL,
+                                ImageFileName NVARCHAR(150) NOT NULL,
+                                PrimaryColorArgb INT NOT NULL,
+                                Stock INT NOT NULL DEFAULT 0
+                            );
+                        ";
+                        SqlCommand createProductsTableCmd = new SqlCommand(createProductsTableSql, conn);
+                        createProductsTableCmd.ExecuteNonQuery();
+                    }
+
+                    // Eğer Products tablosu boşsa varsayılan verileri otomatik seed et (Rubrik E1/B1 Kriteri)
+                    SqlCommand countProductsCmd = new SqlCommand("SELECT COUNT(*) FROM Products", conn);
+                    int productCount = (int)countProductsCmd.ExecuteScalar();
+                    if (productCount == 0)
+                    {
+                        string seedProductsSql = @"
+                            INSERT INTO Products (Name, Brand, Price, Category, ImageFileName, PrimaryColorArgb, Stock)
+                            VALUES 
+                            (N'Mavi Premium Kablosuz Kulaklık', N'ProCompute', 3499.00, N'Kablosuz Kulaklıklar', N'blue_headphones.png', -10579516, 10),
+                            (N'Taşınabilir Oyun Konsolu', N'PlayAnywhere', 12999.00, N'Masaüstü Bilgisayarlar', N'white_controller.png', -2305818, 5),
+                            (N'Çiçek Desenli Tablet Kılıfı', N'SkinArt', 699.00, N'Kılıflar & Ekran Koruyucular', N'tablet_case.png', -991433, 0),
+                            (N'Lavanta Rengi Kablosuz Kulaklık', N'SonicWave', 1999.00, N'Kablosuz Kulaklıklar', N'lavender_headphones.png', -2635541, 8),
+                            (N'White Graphic Crop Top', N'woden''s Brand', 449.00, N'Telefon Aksesuarları', N'white_crop_top.png', -1318928, 0),
+                            (N'Black Shorts', N'MM''s Brand', 549.00, N'Dizüstü Bilgisayarlar', N'black_shorts.png', -1644826, 15);
+                        ";
+                        SqlCommand seedProductsCmd = new SqlCommand(seedProductsSql, conn);
+                        seedProductsCmd.ExecuteNonQuery();
+                    }
                 }
             }
             catch (Exception ex)

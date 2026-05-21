@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using ERP.Entities;
 
 namespace ERP.UI
 {
@@ -280,9 +281,24 @@ namespace ERP.UI
                 MessageBox.Show("Sepetinizde ürün bulunmamaktadır.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            MessageBox.Show("Ödeme ekranına yönlendiriliyorsunuz... Siparişiniz alınmıştır!", "Ödeme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            CartManager.Clear();
-            GoBackToHome();
+
+            try
+            {
+                // Sipariş tamamlandığında stokları veritabanında otomatik düşür (Rubrik C3 Kriteri)
+                foreach (var item in CartManager.Items)
+                {
+                    int newStock = Math.Max(0, item.Product.Stock - item.Quantity);
+                    ProductCatalog.UpdateStock(item.Product.Id, newStock);
+                }
+
+                MessageBox.Show("Ödeme ekranına yönlendiriliyorsunuz... Siparişiniz başarıyla alınmış ve veritabanı stokları güncellenmiştir!", "Ödeme Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CartManager.Clear();
+                GoBackToHome();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Sipariş işlenirken bir hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void GoBackToHome()

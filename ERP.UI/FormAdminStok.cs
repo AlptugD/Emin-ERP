@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using ERP.Entities;
 
 namespace ERP.UI
 {
@@ -274,6 +275,7 @@ namespace ERP.UI
                                 if (int.TryParse(txtStock.Text.Trim(), out int stockVal) && stockVal >= 0)
                                 {
                                     product.Stock = stockVal;
+                                    ProductCatalog.UpdateStock(product.Id, stockVal);
                                     saveCount++;
                                 }
                                 else

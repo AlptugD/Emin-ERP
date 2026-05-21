@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
+using ERP.Entities;
 
 namespace ERP.UI
 {
@@ -377,8 +378,8 @@ namespace ERP.UI
                                      item.Brand.ToLower().Contains(search);
                 bool matchesStock = AppSession.IsAdmin || item.Stock > 0;
 
-                if (item.CardPanel != null)
-                    item.CardPanel.Visible = matchesCategory && matchesPrice && matchesSearch && matchesStock;
+                if (item.CardPanel is Guna2Panel panel)
+                    panel.Visible = matchesCategory && matchesPrice && matchesSearch && matchesStock;
             }
         }
 
@@ -441,17 +442,5 @@ namespace ERP.UI
             f.Show();
             this.Hide();
         }
-    }
-
-    public class ProductItem
-    {
-        public string Name { get; set; } = string.Empty;
-        public string Brand { get; set; } = string.Empty;
-        public double Price { get; set; }
-        public string Category { get; set; } = string.Empty;
-        public string ImageFileName { get; set; } = string.Empty;
-        public Color PrimaryColor { get; set; }
-        public Guna2Panel? CardPanel { get; set; }
-        public int Stock { get; set; } = 10;
     }
 }
